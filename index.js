@@ -1,4 +1,4 @@
-require('./config/express')();
+var app = require('./config/express')();
 
 app.get('/', function(req, res){
   res.send('Hello World');

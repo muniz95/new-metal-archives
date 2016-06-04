@@ -1,0 +1,17 @@
+{
+  "name": "new-metal-archives",
+  "description": "Metal Archives new website",
+  "main": "index.js",
+  "authors": [
+    "Rodrigo Muniz (rodrigo.temiski1995@gmail.com)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/muniz95/new-metal-archives",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
