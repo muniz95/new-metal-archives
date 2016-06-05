@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="new-metal-archives">
   <head>
-    <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Metal Archives</title>
+    <link rel="stylesheet" href=" vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href=" vendor/bootstrap/dist/css/bootstrap-theme.css">
     <title></title>
   </head>
-  <body>
-    <h1>Welcome to Metal Archives</h1>
-
-    <button>New</button>
-    <p>
-      Registered bands: 0
-    </p>
+  <body class="container">
+    <div ng-view></div>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/BandsController.js"></script>
+    <script src="js/controllers/BandController.js"></script>
   </body>
 </html>

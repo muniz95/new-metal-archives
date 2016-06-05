@@ -3,7 +3,7 @@ var bands = [
   {_id: 2, name: 'Megadeth', genre: 'Thrash Metal', status: 'Active' },
   {_id: 3, name: 'Metallica', genre: 'Thrash Metal', status: 'Active' },
   {_id: 4, name: 'Slayer', genre: 'Thrash Metal', status: 'Active' },
-  {_id: 5, name: 'Testament', genre: 'Thrash Metal', status: 'Active' }
+  {_id: 5, name: 'Testament', genre: 'Thrash Metal', status: 'Active' },
   {_id: 6, name: 'Sepultura', genre: 'Thrash Metal', status: 'Active' }
 ];
 
