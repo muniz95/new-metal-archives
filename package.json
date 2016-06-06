@@ -18,9 +18,28 @@
   "homepage": "https://github.com/muniz95/new-metal-archives#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
     "express-load": "^1.1.15",
-    "method-override": "^2.3.6"
+    "express-session": "^1.13.0",
+    "helmet": "^2.1.0",
+    "method-override": "^2.3.6",
+    "mongo-sanitize": "^1.0.0",
+    "mongodb": "^2.1.21",
+    "mongoose": "^4.4.20",
+    "mongoose-findorcreate": "^0.1.2",
+    "passport": "^0.3.2",
+    "passport-github": "^1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-usemin": "^3.1.1"
   }
 }

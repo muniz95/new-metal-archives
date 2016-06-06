@@ -1,62 +1,89 @@
-var ID_BAND_INC = 6;
+var sanitize = require('mongo-sanitize');
 
-var bands = [
-  {'_id': 1, 'name': 'Anthrax', 'genre': 'Thrash Metal', 'status': 'Active', 'email': 'contact@anthrax.com' },
-  {'_id': 2, 'name': 'Megadeth', 'genre': 'Thrash Metal', 'status': 'Active', 'email': 'contact@megadeth.com' },
-  {'_id': 3, 'name': 'Metallica', 'genre': 'Thrash Metal', 'status': 'Active', 'email': 'contact@metallica.com' },
-  {'_id': 4, 'name': 'Slayer', 'genre': 'Thrash Metal', 'status': 'Active', 'email': 'contact@slayer.com' },
-  {'_id': 5, 'name': 'Testament', 'genre': 'Thrash Metal', 'status': 'Active', 'email': 'contact@testament.com' },
-  {'_id': 6, 'name': 'Sepultura', 'genre': 'Thrash Metal', 'status': 'Active', 'email':'contact@sepultura.com'  }
-];
-
-module.exports = function(){
+module.exports = function(app){
+  var Band = app.models.band;
   var controller = {};
 
   controller.listBands = function(req,res){
-    res.json(bands);
+    var promise = Band.find().exec()
+    .then(function(bands){
+      res.json(bands);
+    },
+    function(err){
+      console.error(err);
+      res.status(504).json(err);
+    });
   };
 
   controller.getBand = function(req,res){
-    var band_id = req.params.id;
-    var band = bands.filter(function(band){
-      return band._id == band_id;
-    })[0];
-    band ?
-      res.json(band) :
-      res.status(404).send('Band not found.');
+    var _id = req.params.id;
+    Band.findById(_id).exec()
+    .then(function(band){
+      if(!band) throw new Error("Band not found");
+      res.json(band);
+    },
+    function(err){
+      console.error(err);
+      res.status(404).json(err);
+    });
   };
 
   controller.removeBand = function(req,res){
-    var band_id = req.params.id;
-    bands = bands.filter(function(band){
-      return band._id != band_id;
+    var _id = sanitize(req.params.id);
+    Band.remove({"_id": _id}).exec()
+    .then(function(){
+      res.status(204).end();
+    },
+    function(err){
+      return console.error(err);
     });
-    res.status(204).end();
   };
 
   controller.saveBand = function(req,res){
-    var band = req.body;
-    band = band._id ?
-      update(band) :
-      add(band);
-    res.json(band);
+    var _id = req.body.id;
+    var data = {
+      'name': req.body.name,
+      'genre': req.body.genre,
+      'status': req.body.status,
+      'email': req.body.email
+    };
+    if(_id){
+      Band.findByIdAndUpdate(_id, data).exec()
+      .then(function(band){
+        res.json(band);
+      },
+      function(err){
+        console.error(err);
+        res.status(500).json(err);
+      });
+    }
+    else{
+      Band.create(data)
+      .then(function(band){
+        res.status(201).json(band);
+      },
+      function(err){
+        console.error(err);
+        res.status(500).json(err);
+      });
+    }
   };
 
-  function add(newBand){
-    newBand._id = ++ID_BAND_INC;
-    bands.push(newBand);
-    return newBand;
-  }
+  // function add(newBand){
+  //   newBand._id = ++ID_BAND_INC;
+  //   bands.push(newBand);
+  //   return newBand;
+  // }
 
-  function update(upBand){
-    bands = bands.map(function(band){
-      if(contato._id == upBand._id){
-        band = upBand;
-      }
-      return band;
-    });
-    return upBand;
-  }
+  // function update(upBand){
+  //   bands = bands.map(function(band){
+  //     if(contato._id == upBand._id){
+  //       band = upBand;
+  //     }
+  //     return band;
+  //   });
+  //   return upBand;
+  // }
 
   return controller;
 }

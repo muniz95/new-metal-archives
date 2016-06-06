@@ -1,9 +1,11 @@
 var app = require('./config/express')();
+var passport = require("./config/passport")();
+require('./config/database')('mongodb://localhost/nma');
 
 app.get('/', function(req, res){
   res.send('Hello World');
 });
 
-app.listen(app.get('port'), function(){
+app.listen(app.get('port'), app.get('ip'), function(){
   console.log('Listening on port ' + app.get('port'));
 });

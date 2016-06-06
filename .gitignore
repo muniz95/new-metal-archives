@@ -36,3 +36,9 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 public/vendor
+dist
+
+#Cloud9 related settings
+data/
+mongod
+.tmp/
