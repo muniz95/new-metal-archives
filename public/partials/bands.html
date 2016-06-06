@@ -1,14 +1,20 @@
 <div class="jumbotron">
+  <p ng-show="message.text">
+    {{message.text}}
+  </p>
   <h1 class="text-center">
     Welcome to Metal Archives
   </h1>
 </div>
 
-<button class="btn btn-primary" ng-click="increment()">
-  New
-</button>
+<a ng-href="#/band" class="btn btn-primary">New</a>
 <input ng-model="filter" type="search" placeholder="Band name">
-<p>Registered bands: {{total}}</p>
+<p ng-show="bands.length">
+  Registered bands: {{bands.length}}
+</p>
+<p class="text-info" ng-hide="bands.length">
+  There are no bands registered.
+</p>
 
 <div class="table-responsive">
   <table class="table table-hover">
@@ -19,11 +25,11 @@
     </tr>
     <tr ng-repeat="band in bands | filter: filter">
       <td>
-        <a>{{band.name}}</a>
+        <a ng-href="#/band/{{band._id}}">{{band.name}}</a>
       </td>
       <td>{{band.genre}}</td>
       <td class="text-center">
-        <button class="btn btn-warning">
+        <button ng-click="remove(band)" class="btn btn-warning">
           Remove
         </button>
       </td>
