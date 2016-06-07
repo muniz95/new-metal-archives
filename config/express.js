@@ -30,9 +30,9 @@ module.exports = function(){
   app.use(passport.session());
   app.use(helmet());
   app.disable('x-powered-by');
-  // app.use(helmet.xFrame());
+  app.use(helmet.xframe());
   app.use(helmet.xssFilter());
-  app.use(helmet.noSniff());
+  app.use(helmet.nosniff());
 
   load('models', {cwd: 'app'})
     .then('controllers')

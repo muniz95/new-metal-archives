@@ -2,7 +2,7 @@ describe('BandController', function(){
 
   var $scope;
 
-  beforeEach(function{
+  beforeEach(function(){
     module('new-metal-archives');
     inject(function ($injector) {
       $scope = $injector.get('$rootScope').$new();

@@ -37,6 +37,7 @@ jspm_packages
 .node_repl_history
 public/vendor
 dist
+scripts
 
 #Cloud9 related settings
 data/
