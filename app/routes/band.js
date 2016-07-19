@@ -11,10 +11,10 @@ module.exports = function(app){
   var controller = app.controllers.band;
 
   app.route('/bands')
-    .get(checkAuth, controller.listBands)
+    .get(controller.listBands)
     .post(checkAuth, controller.saveBand);
 
   app.route('/bands/:id')
-    .get(checkAuth, controller.getBand)
+    .get(controller.getBand)
     .delete(checkAuth, controller.removeBand);
 }

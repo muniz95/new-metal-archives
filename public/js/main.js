@@ -16,10 +16,25 @@ angular.module('new-metal-archives', ['ngRoute','ngResource'])
       templateUrl: 'partials/band.html',
       controller: 'BandController'
     });
+    
+    $routeProvider.when('/artists', {
+      templateUrl: 'partials/artists.html',
+      controller: 'ArtistsController'
+    });
+
+    $routeProvider.when('/artist/:artist_id', {
+      templateUrl: 'partials/artist.html',
+      controller: 'ArtistController'
+    });
+
+    $routeProvider.when('/artist', {
+      templateUrl: 'partials/artist.html',
+      controller: 'ArtistController'
+    });
 
     $routeProvider.when('/auth', {
       templateUrl: 'partials/auth.html'
     });
 
-    $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({redirectTo: '/bands'});
 });

@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <p ng-show="message.text">
+    {{message.text}}
+  </p>
+  <h1 class="text-center">
+    Welcome to Metal Archives
+  </h1>
+</div>
+
+<a ng-href="#/artist" class="btn btn-primary">New</a>
+<input ng-model="filter" type="search" placeholder="Artist name">
+<p ng-show="artists.length">
+  Registered artists: {{artists.length}}
+</p>
+<p class="text-info" ng-hide="artists.length">
+  There are no artists registered.
+</p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Genre</th>
+      <th class="text-center">Action</th>
+    </tr>
+    <tr ng-repeat="artist in artists | filter: filter">
+      <td>
+        <a ng-href="#/artist/{{artist._id}}">{{artist.name}}</a>
+      </td>
+      <td>{{artist.genre}}</td>
+      <td class="text-center">
+        <button ng-click="remove(artist)" class="btn btn-warning">
+          Remove
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
