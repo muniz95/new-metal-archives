@@ -21,5 +21,5 @@ angular.module('new-metal-archives', ['ngRoute','ngResource'])
       templateUrl: 'partials/auth.html'
     });
 
-    $routeProvider.otherwise({redirectTo: '/bands'});
+    $routeProvider.otherwise({redirectTo: '/'});
 });
