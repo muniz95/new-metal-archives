@@ -19,7 +19,7 @@ module.exports = function(){
   app.use(express.static('./public'));
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
-  app.use(require('method-override')()); 
+  app.use(require('method-override')());
   app.use(cookieParser());
   app.use(session({
     secret: 'cachaça de morretes',
@@ -36,10 +36,10 @@ module.exports = function(){
 
   load('models', {cwd: 'app'})
     .then('controllers')
-    .then('routes/auth.js')
+    // .then('routes/auth.js')
     .then('routes')
     .into(app);
-    
+
     app.get('*', function(req,res){
       res.status(404).render('404');
     });
