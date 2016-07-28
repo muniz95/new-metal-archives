@@ -11,14 +11,6 @@
     <title></title>
   </head>
   <body class="container">
-    <% if(loggedUser.length > 0) { %>
-      <div class="text-right">
-        <p>
-          Logged in as: <span id="logged-user"><%=loggedUser%></span>
-          <a href="/logout">Logout</a>
-        </p>
-      </div>
-    <% } %>
     <div ng-view></div>
     <!-- build:js js/index.min.js -->
     <script src="vendor/angular/angular.js"></script>

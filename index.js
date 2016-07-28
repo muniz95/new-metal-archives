@@ -1,5 +1,4 @@
 var app = require('./config/express')();
-var passport = require("./config/passport")();
 require('./config/database')('mongodb://localhost/nma');
 
 app.get('/', function(req, res){
