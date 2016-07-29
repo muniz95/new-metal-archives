@@ -34,7 +34,8 @@ $body-bg:               #000 !default;
 $text-color:            #DFD5CC !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+// $link-color:            $brand-primary !default;
+$link-color:            #6D3F40 !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
