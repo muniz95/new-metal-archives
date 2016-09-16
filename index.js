@@ -2,9 +2,7 @@ var app = require('./config/express')();
 require('./config/database')('mongodb://localhost/nma');
 
 app.get('/', function(req, res){
-  res.send('Hello World');
+    res.send('Hello World');
 });
 
-app.listen(app.get('port'), app.get('ip'), function(){
-  console.log('Listening on port ' + app.get('port'));
-});
+app.listen(app.get('port'), app.get('ip'));
