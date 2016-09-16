@@ -4,8 +4,7 @@ module.exports = function(grunt) {
       project: {
         expand: true,
         cwd: '.', 
-        src: ['**', '!Gruntfile.js', '!package.json', 
-                   '!public/bower.json'],
+        src: ['**', '!Gruntfile.js', '!package.json', '!mongod', '!data/**', '!test/**', '!public/bower.json'],
         dest: 'dist'
       }
     }, 
