@@ -1,50 +1,46 @@
 {
-  "name": "new-metal-archives",
-  "version": "1.0.0",
-  "description": "Metal Archives new website",
-  "main": "index.js",
+  "name": "mean-app",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muniz95/new-metal-archives.git"
-  },
-  "author": "Rodrigo Muniz (rodrigo.temiski1995@gmail.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/muniz95/new-metal-archives/issues"
-  },
-  "homepage": "https://github.com/muniz95/new-metal-archives#readme",
+  "private": true,
   "dependencies": {
-    "body-parser": "^1.6.7",
-    "cookie-parser": "^1.3.3",
-    "ejs": "^0.8.8",
-    "express": "^4.8.8",
-    "express-load": "^1.1.14",
-    "express-session": "^1.7.6",
-    "method-override": "^2.1.3",
-    "mongo-sanitize": "^1.0.0",
-    "mongodb": "^1.4.28",
-    "mongoose": "^4.5.5",
-    "mongoose-findorcreate": "^0.1.2"
+    "@angular/common": "^2.4.0",
+    "@angular/compiler": "^2.4.0",
+    "@angular/core": "^2.4.0",
+    "@angular/forms": "^2.4.0",
+    "@angular/http": "^2.4.0",
+    "@angular/platform-browser": "^2.4.0",
+    "@angular/platform-browser-dynamic": "^2.4.0",
+    "@angular/router": "^3.4.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-ng-annotate": "^0.5.0",
-    "grunt-usemin": "^2.6.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2",
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.22",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "@angular/cli": "1.0.0-rc.2",
+    "@angular/compiler-cli": "^2.4.0",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~2.0.0",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "protractor": "~5.1.0",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.0.0"
   }
 }
