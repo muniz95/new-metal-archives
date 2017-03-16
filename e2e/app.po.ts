@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class MeanAppPage {
+export class NewMetalArchivesPage {
   navigateTo() {
     return browser.get('/');
   }

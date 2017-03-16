@@ -1,10 +1,10 @@
-import { MeanAppPage } from './app.po';
+import { NewMetalArchivesPage } from './app.po';
 
-describe('mean-app App', () => {
-  let page: MeanAppPage;
+describe('new-meta-archives App', () => {
+  let page: NewMetalArchivesPage;
 
   beforeEach(() => {
-    page = new MeanAppPage();
+    page = new NewMetalArchivesPage();
   });
 
   it('should display message saying app works', () => {
