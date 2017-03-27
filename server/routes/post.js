@@ -3,10 +3,6 @@ const router = express.Router();
 const axios = require('axios');
 const API = 'https://jsonplaceholder.typicode.com';
 
-router.get('/', (req, res) => {
-  res.send('api works');
-});
-
 router.get('/posts', (req, res) => {
   axios.get(`${API}/posts`)
     .then(posts => {
