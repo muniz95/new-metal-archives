@@ -2,10 +2,12 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-
-const api = require('./server/main');
+const consign = require('consign');
+const api = express.Router();
 
 const app = express();
+
+consign({cwd:'server'}).include('routes').into(api);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
