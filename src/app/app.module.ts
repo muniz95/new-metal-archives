@@ -6,8 +6,10 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
+import { BandsComponent } from './bands/bands.component';
 
 import { PostsService } from './posts.service';
+import { BandsService } from './bands.service';
 
 const ROUTES = [
   {
@@ -24,7 +26,8 @@ const ROUTES = [
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    BandsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [PostsService],
+  providers: [PostsService, BandsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
