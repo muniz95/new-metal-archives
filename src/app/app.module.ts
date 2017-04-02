@@ -5,28 +5,25 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { BandsComponent } from './bands/bands.component';
 
-import { PostsService } from './posts.service';
 import { BandsService } from './bands.service';
 
 const ROUTES = [
   {
     path: '',
-    redirectTo: 'posts',
+    redirectTo: 'bands',
     pathMatch: 'full'
   },
   {
-    path: 'posts',
-    component: PostsComponent
+    path: 'bands',
+    component: BandsComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
     BandsComponent
   ],
   imports: [
@@ -35,7 +32,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [PostsService, BandsService],
+  providers: [BandsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
