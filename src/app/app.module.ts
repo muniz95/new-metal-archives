@@ -10,6 +10,7 @@ import { ArtistsComponent } from './artists/artists.component';
 
 import { BandsService } from './bands.service';
 import { ArtistsService } from './artists.service';
+import { ReleasesComponent } from './releases/releases.component';
 
 const ROUTES = [
   {
@@ -31,7 +32,8 @@ const ROUTES = [
   declarations: [
     AppComponent,
     BandsComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    ReleasesComponent
   ],
   imports: [
     BrowserModule,
