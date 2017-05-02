@@ -6,8 +6,10 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BandsComponent } from './bands/bands.component';
+import { ArtistsComponent } from './artists/artists.component';
 
 import { BandsService } from './bands.service';
+import { ArtistsService } from './artists.service';
 
 const ROUTES = [
   {
@@ -18,13 +20,18 @@ const ROUTES = [
   {
     path: 'bands',
     component: BandsComponent
+  },
+  {
+    path: 'artists',
+    component: ArtistsComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    BandsComponent
+    BandsComponent,
+    ArtistsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,7 @@ const ROUTES = [
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [BandsService],
+  providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,18 +12,18 @@ export class BandsComponent implements OnInit {
   constructor(private bandsService: BandsService) { }
 
   ngOnInit() {
-    // this.bands = [
-    //   {
-    //     name: 'Metallica',
-    //     genre: 'Thrash Metal',
-    //     status: 'Active'
-    //   },
-    //   {
-    //     name: 'Black Sabbath',
-    //     genre: 'Heavy/Doom Metal',
-    //     status: 'Split-up'
-    //   }
-    // ];
+    this.bands = [
+      {
+        name: 'Metallica',
+        genre: 'Thrash Metal',
+        status: 'Active'
+      },
+      {
+        name: 'Black Sabbath',
+        genre: 'Heavy/Doom Metal',
+        status: 'Split-up'
+      }
+    ];
 
     this.bandsService.getAllBands().subscribe(bands => this.bands = bands);
   }
