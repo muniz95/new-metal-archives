@@ -1,45 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { CollapseModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BandsComponent } from './bands/bands.component';
 import { ArtistsComponent } from './artists/artists.component';
 
-import { BandsService } from './bands.service';
-import { ArtistsService } from './artists.service';
+import { BandsService } from './shared/services/bands.service';
+import { ArtistsService } from './shared/services/artists.service';
 import { ReleasesComponent } from './releases/releases.component';
-
-const ROUTES = [
-  {
-    path: '',
-    redirectTo: 'bands',
-    pathMatch: 'full'
-  },
-  {
-    path: 'bands',
-    component: BandsComponent
-  },
-  {
-    path: 'artists',
-    component: ArtistsComponent
-  }
-];
+import { HomeModule } from './home/home.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRouting } from 'app/app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BandsComponent,
     ArtistsComponent,
-    ReleasesComponent
+    ReleasesComponent,
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    HomeModule,
+    CollapseModule.forRoot(),
+    AppRouting
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
