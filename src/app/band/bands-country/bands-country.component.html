@@ -1,0 +1,36 @@
+<div class="row" *ngIf="!selectedCountry">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let country of countries">
+    <span (click)="searchBands(country)">{{country.name}}</span>
+  </div>
+</div>
+<div *ngIf="selectedCountry">
+  <a (click)="showCountryList()">Country list</a> > {{selectedCountry.name}}
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+      <h4>Name</h4>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <h4>Country</h4>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+      <h4>Genre</h4>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+      <h4>Status</h4>
+    </div>
+  </div>
+  <div class="row" *ngFor="let band of bandsByCountry">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+      {{band.name}}
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      {{band.country}}
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+      {{band.genre}}
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+      {{band.status}}
+    </div>
+  </div>
+</div>
