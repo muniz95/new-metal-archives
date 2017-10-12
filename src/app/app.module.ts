@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 import { CollapseModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { BandsComponent } from './bands/bands.component';
 import { ArtistsComponent } from './artists/artists.component';
 
 import { BandsService } from './shared/services/bands.service';
@@ -14,11 +13,12 @@ import { HomeModule } from './home/home.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouting } from 'app/app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BandModule } from './band/band.module';
+import { BandRouting } from 'app/band/band.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BandsComponent,
     ArtistsComponent,
     ReleasesComponent,
     NotFoundComponent,
@@ -29,6 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpModule,
     HomeModule,
     CollapseModule.forRoot(),
+    BandModule,
+    BandRouting,
     AppRouting
   ],
   providers: [BandsService, ArtistsService],
