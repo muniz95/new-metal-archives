@@ -14,7 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRouting } from 'app/app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BandModule } from './band/band.module';
-import { BandRouting } from 'app/band/band.routing';
+import { LabelModule } from './label/label.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { BandRouting } from 'app/band/band.routing';
     HomeModule,
     CollapseModule.forRoot(),
     BandModule,
-    BandRouting,
-    AppRouting
+    AppRouting,
+    LabelModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]

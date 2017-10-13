@@ -1,0 +1,81 @@
+<h2>Browse Labels - Alphabetically</h2>
+<div class="row">
+  <span (click)="fetchLabels('A')">A</span>
+  <span (click)="fetchLabels('B')">B</span>
+  <span (click)="fetchLabels('C')">C</span>
+  <span (click)="fetchLabels('D')">D</span>
+  <span (click)="fetchLabels('E')">E</span>
+  <span (click)="fetchLabels('F')">F</span>
+  <span (click)="fetchLabels('G')">G</span>
+  <span (click)="fetchLabels('H')">H</span>
+  <span (click)="fetchLabels('I')">I</span>
+  <span (click)="fetchLabels('J')">J</span>
+  <span (click)="fetchLabels('K')">K</span>
+  <span (click)="fetchLabels('L')">L</span>
+  <span (click)="fetchLabels('M')">M</span>
+  <span (click)="fetchLabels('N')">N</span>
+  <span (click)="fetchLabels('O')">O</span>
+  <span (click)="fetchLabels('P')">P</span>
+  <span (click)="fetchLabels('Q')">Q</span>
+  <span (click)="fetchLabels('R')">R</span>
+  <span (click)="fetchLabels('S')">S</span>
+  <span (click)="fetchLabels('T')">T</span>
+  <span (click)="fetchLabels('U')">U</span>
+  <span (click)="fetchLabels('V')">V</span>
+  <span (click)="fetchLabels('W')">W</span>
+  <span (click)="fetchLabels('X')">X</span>
+  <span (click)="fetchLabels('Y')">Y</span>
+  <span (click)="fetchLabels('Z')">Z</span>
+  <span (click)="fetchLabels('#')">#</span>
+  <span (click)="fetchLabels('~')">~</span>
+</div>
+<div>
+  Please choose a letter in the menu above.
+</div>
+<div>
+  For numbers, select #.
+</div>
+<div>
+  For non-Latin alphabets or for symbols, select ~.
+</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <h4>Name</h4>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <h4>Specialisation</h4>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <h4>Status</h4>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <h4>Country</h4>
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    <h4>Website</h4>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <h4>Online Shopping?</h4>
+  </div>
+</div>
+<div class="row" *ngFor="let label of labels">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{label.name}}
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    {{label.specialisation}}
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{label.status}}
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{label.country}}
+  </div>
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    {{label.website}}
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{label.shopping ? 'Yes' : 'No'}}
+  </div>
+</div>
