@@ -15,6 +15,7 @@ import { AppRouting } from 'app/app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BandModule } from './band/band.module';
 import { LabelModule } from './label/label.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LabelModule } from './label/label.module';
     CollapseModule.forRoot(),
     BandModule,
     AppRouting,
-    LabelModule
+    LabelModule,
+    ReviewsModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
