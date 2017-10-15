@@ -1,3 +1,57 @@
-<p>
-  reviews-by-alpha works!
-</p>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <span (click)="fetchRatings('A')">A</span>
+    <span (click)="fetchRatings('B')">B</span>
+    <span (click)="fetchRatings('C')">C</span>
+    <span (click)="fetchRatings('D')">D</span>
+    <span (click)="fetchRatings('E')">E</span>
+    <span (click)="fetchRatings('F')">F</span>
+    <span (click)="fetchRatings('G')">G</span>
+    <span (click)="fetchRatings('H')">H</span>
+    <span (click)="fetchRatings('I')">I</span>
+    <span (click)="fetchRatings('J')">J</span>
+    <span (click)="fetchRatings('K')">K</span>
+    <span (click)="fetchRatings('L')">L</span>
+    <span (click)="fetchRatings('M')">M</span>
+    <span (click)="fetchRatings('N')">N</span>
+    <span (click)="fetchRatings('O')">O</span>
+    <span (click)="fetchRatings('P')">P</span>
+    <span (click)="fetchRatings('Q')">Q</span>
+    <span (click)="fetchRatings('R')">R</span>
+    <span (click)="fetchRatings('S')">S</span>
+    <span (click)="fetchRatings('T')">T</span>
+    <span (click)="fetchRatings('U')">U</span>
+    <span (click)="fetchRatings('V')">V</span>
+    <span (click)="fetchRatings('W')">W</span>
+    <span (click)="fetchRatings('X')">X</span>
+    <span (click)="fetchRatings('Y')">Y</span>
+    <span (click)="fetchRatings('Z')">Z</span>
+    <span (click)="fetchRatings('#')">#</span>
+    <span (click)="fetchRatings('~')">~</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    Metallica
+    <table class="table table-responsive">
+      <thead>
+        <th>Read</th>
+        <th>Band</th>
+        <th>Album</th>
+        <th>Rating</th>
+        <th>Author</th>
+        <th>Date</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of reviews">
+          <td>{{review.url}}</td>
+          <td>{{review.band}}</td>
+          <td>{{review.album}}</td>
+          <td>{{review.rating}}</td>
+          <td>{{review.author}}</td>
+          <td>{{review.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

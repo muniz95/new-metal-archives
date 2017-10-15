@@ -27,6 +27,7 @@ export class ReviewsByDateComponent implements OnInit {
       this.dateRange.push(new Date(moment(currentDate).format('YYYY-MM-DD')))
       currentDate = moment(currentDate).add(1, 'months');
     }
+    this.dateRange.reverse()
   }
 
   private fillReviews() {
