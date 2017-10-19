@@ -17,6 +17,7 @@ import { BandModule } from './band/band.module';
 import { LabelModule } from './label/label.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import { RipModule } from './rip/rip.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RipModule } from './rip/rip.module';
     AppRouting,
     LabelModule,
     ReviewsModule,
-    RipModule
+    RipModule,
+    UserModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]

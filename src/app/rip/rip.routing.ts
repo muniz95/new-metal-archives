@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RipComponent } from './rip.component';
 
-const ripRoutes: Routes = [
+const routes: Routes = [
   { path: 'rip', pathMatch: 'full', component: RipComponent }
 ];
 
-export const RipRouting: ModuleWithProviders = RouterModule.forRoot(ripRoutes);
+export const RipRouting: ModuleWithProviders = RouterModule.forRoot(routes);
