@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BandModule } from './band/band.module';
 import { LabelModule } from './label/label.module';
 import { ReviewsModule } from './reviews/reviews.module';
+import { RipModule } from './rip/rip.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     BandModule,
     AppRouting,
     LabelModule,
-    ReviewsModule
+    ReviewsModule,
+    RipModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
