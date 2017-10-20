@@ -19,6 +19,8 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { RipModule } from './rip/rip.module';
 import { UserModule } from './user/user.module';
 import { NewsModule } from './news/news.module';
+import { ReportModule } from './report/report.module';
+import { TodoModule } from './todo/todo.module';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { NewsModule } from './news/news.module';
     ReviewsModule,
     RipModule,
     UserModule,
-    NewsModule
+    NewsModule,
+    ReportModule,
+    TodoModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
