@@ -21,6 +21,7 @@ import { UserModule } from './user/user.module';
 import { NewsModule } from './news/news.module';
 import { ReportModule } from './report/report.module';
 import { TodoModule } from './todo/todo.module';
+import { HelpModule } from './help/help.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { TodoModule } from './todo/todo.module';
     UserModule,
     NewsModule,
     ReportModule,
-    TodoModule
+    TodoModule,
+    HelpModule
   ],
   providers: [BandsService, ArtistsService],
   bootstrap: [AppComponent]
