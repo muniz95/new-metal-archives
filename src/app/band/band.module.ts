@@ -4,12 +4,20 @@ import { BandsAlphabeticalComponent } from './bands-alphabetical/bands-alphabeti
 import { BandsCountryComponent } from './bands-country/bands-country.component';
 import { BandsGenreComponent } from './bands-genre/bands-genre.component';
 import { BandRouting } from 'app/band/band.routing';
+import { BandInfoComponent } from './band-info/band-info.component';
+import { TabsModule } from 'ngx-bootstrap/tabs/tabs.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    TabsModule.forRoot(),
     BandRouting
   ],
-  declarations: [BandsAlphabeticalComponent, BandsCountryComponent, BandsGenreComponent]
+  declarations: [
+    BandsAlphabeticalComponent,
+    BandsCountryComponent,
+    BandsGenreComponent,
+    BandInfoComponent
+  ]
 })
 export class BandModule { }
