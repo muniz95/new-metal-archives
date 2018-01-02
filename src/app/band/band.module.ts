@@ -7,6 +7,7 @@ import { BandRouting } from 'app/band/band.routing';
 import { BandInfoComponent } from './band-info/band-info.component';
 import { TabsModule } from 'ngx-bootstrap/tabs/tabs.module';
 import { BandDiscographyComponent } from './band-info/band-discography/band-discography.component';
+import { BandMembersComponent } from './band-info/band-members/band-members.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { BandDiscographyComponent } from './band-info/band-discography/band-disc
     BandsCountryComponent,
     BandsGenreComponent,
     BandInfoComponent,
-    BandDiscographyComponent
+    BandDiscographyComponent,
+    BandMembersComponent
   ]
 })
 export class BandModule { }
