@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <span>Complete discography</span>
+    <span>Main</span>
+    <span>Lives</span>
+    <span>Demos</span>
+    <span>Misc.</span>
+  </div>
+</div>
+<div class="space"></div>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    Name
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    Type
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    Year
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    Reviews
+  </div>
+</div>
+<div class="space"></div>
+<div class="row" *ngFor="let album of discography">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <span class="link">{{album.name}}</span>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{album.albumType}}
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    {{album.year}}
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <span class="link">
+      {{album.reviews || ''}}{{album.average ? ' (' + album.average + '%)' : ''}}
+    </span>
+  </div>
+</div>
