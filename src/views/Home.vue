@@ -6,7 +6,11 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  created () {
+    const res = Math.random()
+    console.log(res)
+  }
 }
 </script>
 
