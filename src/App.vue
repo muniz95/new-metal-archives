@@ -22,14 +22,12 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  display: flex;
+  flex-flow: column;
 }
 
 main {
-  text-align: center;
-  margin-top: 40px;
+  height: 90%;
+  padding: 10px;
 }
 </style>

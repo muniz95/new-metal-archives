@@ -13,9 +13,8 @@ export default {
 <style>
   header {
     margin: 0;
-    height: 56px;
+    height: 10%;
     padding: 0 16px 0 24px;
-    background-color: #35495E;
     color: #ffffff;
   }
 

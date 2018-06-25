@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+$background-color: #000000;
+$link-color: #A2787a;
+$link-color-visited: #787878;
+
+html, body, #app {
+  background-color: $background-color;
+  height: 100%;
+  font: 11px/16px Verdana,Arial,Geneva,sans-serif;
+  color: white;
+}
+
+a {
+  color: $link-color;
+}
+
+a:visited {
+  color: $link-color-visited;
+}
