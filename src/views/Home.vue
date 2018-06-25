@@ -2,7 +2,6 @@
   <div class="main">
     <div class="right-element">
       <a href="#">This is home</a>
-      YES
     </div>
     <div class="left-element">
 
