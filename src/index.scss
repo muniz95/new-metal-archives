@@ -18,3 +18,11 @@ a {
 a:visited {
   color: $link-color-visited;
 }
+
+button {
+  border: none;
+  background-color: #6D3F40;
+  color: #FFFFFF;
+  height: 2em;
+  border-radius: 5px;
+}
