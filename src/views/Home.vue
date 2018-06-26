@@ -30,17 +30,14 @@
 </template>
 
 <script>
-import LatestBandAdditions from '@/components/home/LatestBandAdditions'
-import LatestLabelAdditions from '@/components/home/LatestLabelAdditions'
-import LatestArtistAdditions from '@/components/home/LatestArtistAdditions'
-import News from '@/components/home/News'
+import HomeComponents from '@/components/home'
 export default {
   name: 'home',
   created () {
     const res = Math.random()
     console.log(res)
   },
-  components: {LatestBandAdditions, LatestLabelAdditions, LatestArtistAdditions, News},
+  components: HomeComponents,
   data () {
     return {
       newsList: [
