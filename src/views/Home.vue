@@ -4,26 +4,50 @@
       <News v-for="news in newsList" v-bind:key='news.id' />
     </div>
     <div class="left-element">
+      <div>
+        <div>
+          <button v-on:click="showTab('band-additions', 'addition')">Bands</button>
+          <button v-on:click="showTab('label-additions', 'addition')">Labels</button>
+          <button v-on:click="showTab('artist-additions', 'addition')">Artists</button>
+        </div>
 
-      <div class="w3-bar w3-black">
-        <button v-on:click="openCity('Bands')">Bands</button>
-        <button v-on:click="openCity('Labels')">Labels</button>
-        <button v-on:click="openCity('Artists')">Artists</button>
+        <div id="band-additions" class="addition">
+          <h2>Bands</h2>
+          <latest-band-additions/>
+        </div>
+
+        <div id="label-additions" class="addition" style="display:none">
+          <h2>Labels</h2>
+          <latest-label-additions/>
+        </div>
+
+        <div id="artist-additions" class="addition" style="display:none">
+          <h2>Artists</h2>
+          <latest-artist-additions/>
+        </div>
       </div>
+      <div>&nbsp;</div>
+      <div>
+        <div>
+          <button v-on:click="showTab('band-updates', 'update')">Bands</button>
+          <button v-on:click="showTab('label-updates', 'update')">Labels</button>
+          <button v-on:click="showTab('artist-updates', 'update')">Artists</button>
+        </div>
 
-      <div id="Bands" class="w3-container city">
-        <h2>Bands</h2>
-        <latest-band-additions/>
-      </div>
+        <div id="band-updates" class="update">
+          <h2>Bands</h2>
+          <latest-band-updates/>
+        </div>
 
-      <div id="Labels" class="w3-container city" style="display:none">
-        <h2>Labels</h2>
-        <latest-label-additions/>
-      </div>
+        <div id="label-updates" class="update" style="display:none">
+          <h2>Labels</h2>
+          <latest-label-updates/>
+        </div>
 
-      <div id="Artists" class="w3-container city" style="display:none">
-        <h2>Artists</h2>
-        <latest-artist-additions/>
+        <div id="artist-updates" class="update" style="display:none">
+          <h2>Artists</h2>
+          <latest-artist-updates/>
+        </div>
       </div>
     </div>
   </div>
@@ -33,10 +57,6 @@
 import HomeComponents from '@/components/home'
 export default {
   name: 'home',
-  created () {
-    const res = Math.random()
-    console.log(res)
-  },
   components: HomeComponents,
   data () {
     return {
@@ -55,8 +75,8 @@ export default {
     }
   },
   methods: {
-    openCity (city) {
-      [...document.getElementsByClassName('city')].forEach(el => { el.style.display = 'none' })
+    showTab (city, type) {
+      [...document.getElementsByClassName(type)].forEach(el => { el.style.display = 'none' })
       document.getElementById(city).style.display = 'block'
     }
   }
