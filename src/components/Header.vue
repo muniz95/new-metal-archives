@@ -1,40 +1,37 @@
 <template>
   <nav>
     <ul>
-      <router-link tag="li" :to="{name: 'Home'}">
-        <a>Home</a>
-      </router-link>
-      <li><a href="#">WordPress</a>
+      <li>
+        <router-link :to="{name: 'Home'}">Home</router-link>
+      </li>
+      <li><router-link :to="{name: 'Home'}">Bands</router-link>
         <ul>
-          <li><a href="#">Themes</a></li>
-          <li><a href="#">Plugins</a></li>
-          <li><a href="#">Tutorials</a></li>
+          <li><router-link :to="{name: 'Home'}">Alphabetical</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Country</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Genre</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Random Band</router-link></li>
         </ul>
       </li>
       <li>
-        <a href="#">Web Design</a>
+        <router-link :to="{name: 'Home'}">Labels</router-link>
         <ul>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">Links</a></li>
-          <li><a href="#">Tutorials</a>
-            <ul>
-              <li><a href="#">HTML/CSS</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Other</a>
-                <ul>
-                  <li><a href="#">Stuff</a></li>
-                  <li><a href="#">Things</a></li>
-                  <li><a href="#">Other Stuff</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+          <li><router-link :to="{name: 'Home'}">Alphabetical</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Country</router-link></li>
         </ul>
       </li>
-      <li><a href="#">Graphic Design</a></li>
-      <li><a href="#">Inspiration</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">About</a></li>
+      <li>
+        <router-link :to="{name: 'Home'}">Others</router-link>
+        <ul>
+          <li><router-link :to="{name: 'Home'}">User Rankings</router-link></li>
+          <li><router-link :to="{name: 'Home'}">News Archive</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Reviews</router-link></li>
+          <li><router-link :to="{name: 'Home'}">R.I.P.</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Reports</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Help</router-link></li>
+          <li><router-link :to="{name: 'Home'}">Rules</router-link></li>
+          <li><router-link :to="{name: 'Home'}">FAQ</router-link></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </template>
@@ -66,7 +63,7 @@
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 45px;
     text-align: center;
     color: #FFF;
   }
@@ -88,7 +85,7 @@
   h1 {
     margin-top: 100px;
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     font-family: 'Bree Serif', 'serif';
   }
 
@@ -127,7 +124,7 @@
   nav ul ul {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 45px;
     /* the height of the main nav */
   }
 
@@ -151,7 +148,7 @@
 
   nav ul ul ul li {
     position: relative;
-    top: -60px;
+    top: -45px;
     left: 170px;
   }
 
