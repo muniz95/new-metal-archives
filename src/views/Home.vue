@@ -49,6 +49,16 @@
           <latest-artist-updates/>
         </div>
       </div>
+      <div>&nbsp;</div>
+      <div>
+        <h2>Latest reviews</h2>
+        <AlbumsTable category="reviews" />
+      </div>
+      <div>&nbsp;</div>
+      <div>
+        <h2>Upcoming releases</h2>
+        <AlbumsTable category="upcoming" />
+      </div>
     </div>
   </div>
 </template>
@@ -91,6 +101,6 @@ export default {
   }
 
   .left-element {
-    width: 30%;
+    width: 40%;
   }
 </style>
