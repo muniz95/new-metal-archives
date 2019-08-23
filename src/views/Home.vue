@@ -112,6 +112,8 @@ export default {
 
   .left-element {
     @media (max-width: 765px) {
+      padding-left: 10px;
+      padding-right: 10px;
       width: 100%;
     }
     @media (min-width: 766px) {

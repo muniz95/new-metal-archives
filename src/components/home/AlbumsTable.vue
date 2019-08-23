@@ -3,7 +3,7 @@
     <tr v-for="album in albums" v-bind:key="album.id">
       <td>{{album.bandName}}</td>
       <td>{{album.name}}</td>
-      <td>{{album.date}}</td>
+      <td class="right">{{album.date}}</td>
     </tr>
   </table>
 </template>
@@ -44,6 +44,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .right {
+    text-align: right;
+  }
 </style>
