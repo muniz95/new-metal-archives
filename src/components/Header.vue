@@ -37,9 +37,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'NMAHeader'
-  }
+export default {
+  name: 'NMAHeader'
+}
 </script>
 
 <style lang="scss">
@@ -118,7 +118,6 @@
     background-color: #6D3F40;
   }
 
-
   /* Hide Dropdowns by Default */
 
   nav ul ul {
@@ -128,14 +127,11 @@
     /* the height of the main nav */
   }
 
-
   /* Display Dropdowns on Hover */
 
   nav ul li:hover>ul {
     display: inherit;
   }
-
-
 
   nav ul ul li {
     width: 170px;
@@ -144,14 +140,11 @@
     position: relative;
   }
 
-
-
   nav ul ul ul li {
     position: relative;
     top: -45px;
     left: 170px;
   }
-
 
   /* Change this in order to change the Dropdown symbol */
 

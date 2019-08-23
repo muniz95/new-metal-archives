@@ -12,7 +12,7 @@ import NMAHeader from '@/components/Header'
 
 export default {
   name: 'app',
-  components: {NMAHeader}
+  components: { NMAHeader }
 }
 </script>
 
