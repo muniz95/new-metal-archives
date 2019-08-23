@@ -93,14 +93,29 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   .main {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .right-element {
+    @media (max-width: 765px) {
+      width: 100%;
+    }
+    @media (min-width: 766px) {
+      width: 70%;
+    }
   }
 
   .left-element {
-    width: 40%;
+    @media (max-width: 765px) {
+      width: 100%;
+    }
+    @media (min-width: 766px) {
+      width: 30%;
+    }
   }
 </style>
