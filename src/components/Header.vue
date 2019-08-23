@@ -8,15 +8,15 @@
         <ul>
           <li><router-link :to="{name: 'BandsByAlphabetical'}">Alphabetical</router-link></li>
           <li><router-link :to="{name: 'BandsByCountry'}">Country</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Genre</router-link></li>
+          <li><router-link :to="{name: 'BandsByGenre'}">Genre</router-link></li>
           <li><router-link :to="{name: 'Home'}">Random Band</router-link></li>
         </ul>
       </li>
       <li>
-        <router-link :to="{name: 'Home'}">Labels</router-link>
+        <router-link :to="{name: ''}">Labels</router-link>
         <ul>
-          <li><router-link :to="{name: 'Home'}">Alphabetical</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Country</router-link></li>
+          <li><router-link :to="{name: 'LabelsByAlphabetical'}">Alphabetical</router-link></li>
+          <li><router-link :to="{name: 'LabelsByCountry'}">Country</router-link></li>
         </ul>
       </li>
       <li>
