@@ -4,10 +4,10 @@
       <li>
         <router-link :to="{name: 'Home'}">Home</router-link>
       </li>
-      <li><router-link :to="{name: 'Home'}">Bands</router-link>
+      <li><router-link :to="{name: ''}">Bands</router-link>
         <ul>
-          <li><router-link :to="{name: 'Home'}">Alphabetical</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Country</router-link></li>
+          <li><router-link :to="{name: 'BandsByAlphabetical'}">Alphabetical</router-link></li>
+          <li><router-link :to="{name: 'BandsByCountry'}">Country</router-link></li>
           <li><router-link :to="{name: 'Home'}">Genre</router-link></li>
           <li><router-link :to="{name: 'Home'}">Random Band</router-link></li>
         </ul>
