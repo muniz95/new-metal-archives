@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home.vue'
 import bands from './bands'
 import labels from './labels'
+import misc from './misc'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
       component: Home
     },
     ...bands,
-    ...labels
+    ...labels,
+    ...misc
   ]
 })
