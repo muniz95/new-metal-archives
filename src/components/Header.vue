@@ -24,12 +24,12 @@
         <ul>
           <li><router-link :to="{name: 'UserRankings'}">User Rankings</router-link></li>
           <li><router-link :to="{name: 'NewsArchive'}">News Archive</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Reviews</router-link></li>
-          <li><router-link :to="{name: 'Home'}">R.I.P.</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Reports</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Help</router-link></li>
-          <li><router-link :to="{name: 'Home'}">Rules</router-link></li>
-          <li><router-link :to="{name: 'Home'}">FAQ</router-link></li>
+          <li><router-link :to="{name: 'Reviews'}">Reviews</router-link></li>
+          <li><router-link :to="{name: 'RIP'}">R.I.P.</router-link></li>
+          <li><router-link :to="{name: 'Reports'}">Reports</router-link></li>
+          <li><router-link :to="{name: 'Help'}">Help</router-link></li>
+          <li><router-link :to="{name: 'Rules'}">Rules</router-link></li>
+          <li><router-link :to="{name: 'FAQ'}">FAQ</router-link></li>
         </ul>
       </li>
     </ul>
