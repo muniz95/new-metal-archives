@@ -1,5 +1,5 @@
 <template>
-  <dir>Help</dir>
+  <div>Help</div>
 </template>
 
 <script>
