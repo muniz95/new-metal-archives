@@ -35,17 +35,17 @@
 
       <div id="valid-albums-only" class="update" style="display:none">
         <h2>Valid Albums Only</h2>
-        <latest-label-updates />
+        <ValidAlbumsOnly />
       </div>
 
       <div id="general" class="update" style="display:none">
         <h2>General</h2>
-        <latest-artist-updates />
+        <General />
       </div>
 
       <div id="reviews" class="update" style="display:none">
         <h2>Reviews</h2>
-        <latest-artist-updates />
+        <Reviews />
       </div>
     </div>
   </div>
