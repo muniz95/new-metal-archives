@@ -1,4 +1,5 @@
 {
   "/api/*": "/$1",
-  "/bands/:id/discography": "/albums?bandId=:id"
+  "/bands/:id/discography": "/albums?bandId=:id",
+  "/bands/:id/members": "/artists?bandId=:id&status=current"
 }

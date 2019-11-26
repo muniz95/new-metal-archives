@@ -36,7 +36,7 @@
       </div>
 
       <div id="members" class="addition" style="display:none">
-        members
+        <BandMembers bandId="1" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
@@ -62,11 +62,11 @@ export default {
     BandDiscography: lazyLoadComponent({
       componentFactory: () => import('@/components/band/Discography.vue'),
       loading: SkeletonBox
+    }),
+    BandMembers: lazyLoadComponent({
+      componentFactory: () => import('@/components/band/Members.vue'),
+      loading: SkeletonBox
     })
-    // BandDiscography: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Discography.vue'),
-    //   loading: SkeletonBox
-    // }),
     // BandDiscography: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/Discography.vue'),
     //   loading: SkeletonBox

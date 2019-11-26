@@ -161,5 +161,87 @@
       "reviews": "2 (93%)",
       "bandId": 1
     }
+  ],
+  "artists": [
+    {
+      "name": "Jordan Mancino",
+      "role": "Drums",
+      "periods": [
+        "2000-2014",
+        "2018-present"
+      ],
+      "relatedProjects": [
+        "Souls of We",
+        "Wovenwar",
+        "ex-Sworn Enemy",
+        "ex-Killswitch Engage (live)",
+        "ex-Unearth (live)",
+        "ex-Edge of Mortality"
+      ],
+      "status": "current",
+      "bandId": 1
+    },
+    {
+      "name": "Tim Lambesis",
+      "role": "Vocals",
+      "periods": [
+        "2000-2014",
+        "2017-present"
+      ],
+      "relatedProjects": [
+        "Austrian Death Machine",
+        "Pyrithion",
+        "ex-Against the Mark",
+        "ex-Life Once Lost",
+        "ex-Point of Recognition",
+        "ex-Society's Finest"
+      ],
+      "status": "current",
+      "bandId": 1
+    },
+    {
+      "name": "Phil Sgrosso",
+      "role": "Guitars",
+      "periods": [
+        "2003-2014",
+        "2018-present"
+      ],
+      "relatedProjects": [
+        "Poison Headache",
+        "Saosin (live)",
+        "ex-Nails (live)",
+        "ex-Wovenwar"
+      ],
+      "status": "current",
+      "bandId": 1
+    },
+    {
+      "name": "Nick Hipa",
+      "role": "Guitars",
+      "periods": [
+        "2004-2014",
+        "2018-present"
+      ],
+      "relatedProjects": [
+        "Wovenwar"
+      ],
+      "status": "current",
+      "bandId": 1
+    },
+    {
+      "name": "Josh Gilbert",
+      "role": "Bass, Vocals (clean)",
+      "periods": [
+        "2007-2014",
+        "2018-present"
+      ],
+      "relatedProjects": [
+        "Austrian Death Machine (live)",
+        "Wovenwar",
+        "Year One"
+      ],
+      "status": "current",
+      "bandId": 1
+    }
   ]
 }
