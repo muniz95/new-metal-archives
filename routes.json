@@ -1,0 +1,4 @@
+{
+  "/api/*": "/$1",
+  "/bands/:id/discography": "/albums?bandId=:id"
+}

@@ -1,0 +1,165 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "albums": [
+    {
+      "name": "Beneath the Encasing of Ashes",
+      "type": "Full-length",
+      "year": "2001",
+      "reviews": "2 (90%)",
+      "bandId": 1
+    },
+    {
+      "name": "As I Lay Dying / American Tragedy",
+      "type": "Split",
+      "year": "2002",
+      "reviews": "1 (80%)",
+      "bandId": 1
+    },
+    {
+      "name": "94 Hours",
+      "type": "Single",
+      "year": "2003",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "Forever",
+      "type": "Single",
+      "year": "2003",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "Frail Words Collapse",
+      "type": "Full-length",
+      "year": "2003",
+      "reviews": "7 (69%)",
+      "bandId": 1
+    },
+    {
+      "name": "Confined",
+      "type": "Single",
+      "year": "2005",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "Through Struggle",
+      "type": "Single",
+      "year": "2005",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "Shadows Are Security",
+      "type": "Full-length",
+      "year": "2005",
+      "reviews": "12 (68%)",
+      "bandId": 1
+    },
+    {
+      "name": "The Darkest Nights",
+      "type": "Single",
+      "year": "2006",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "A Long March: The First Recordings",
+      "type": "Compilation",
+      "year": "2006",
+      "reviews": "1 (70%)",
+      "bandId": 1
+    },
+    {
+      "name": "Nothing Left",
+      "type": "Single",
+      "year": "2007",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "An Ocean Between Us",
+      "type": "Full-length",
+      "year": "2007",
+      "reviews": "12 (70%)",
+      "bandId": 1
+    },
+    {
+      "name": "The Sound of Truth",
+      "type": "Single",
+      "year": "2008",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "This Is Who We Are",
+      "type": "Video",
+      "year": "2009",
+      "reviews": "",
+      "bandId": 1
+    },
+    {
+      "name": "The Powerless Rise",
+      "type": "Full-length",
+      "year": "2010",
+      "reviews": "5 (79%)",
+      "bandId": 1
+    },
+    {
+      "name": "Decas",
+      "type": "EP",
+      "year": "2011",
+      "reviews": "2 (50%)",
+      "bandId": 1
+    },
+    {
+      "name": "Cauterize",
+      "type": "Single",
+      "year": "2012",
+      "reviews": "1 (90%)",
+      "bandId": 1
+    },
+    {
+      "name": "Awakened",
+      "type": "Full-length",
+      "year": "2012",
+      "reviews": "4 (71%)",
+      "bandId": 1
+    },
+    {
+      "name": "My Own Grave",
+      "type": "Single",
+      "year": "2018",
+      "reviews": "1 (90%)",
+      "bandId": 1
+    },
+    {
+      "name": "Redefined",
+      "type": "Single",
+      "year": "2019",
+      "reviews": "1 (80%)",
+      "bandId": 1
+    },
+    {
+      "name": "Shaped by Fire",
+      "type": "Full-length",
+      "year": "2019",
+      "reviews": "2 (93%)",
+      "bandId": 1
+    }
+  ]
+}
