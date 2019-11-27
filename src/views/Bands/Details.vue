@@ -40,7 +40,7 @@
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        reviews
+        <BandReviews bandId="1" />
       </div>
 
       <div id="similar-artists" class="addition" style="display:none">
@@ -66,11 +66,11 @@ export default {
     BandMembers: lazyLoadComponent({
       componentFactory: () => import('@/components/band/Members.vue'),
       loading: SkeletonBox
+    }),
+    BandReviews: lazyLoadComponent({
+      componentFactory: () => import('@/components/band/Reviews.vue'),
+      loading: SkeletonBox
     })
-    // BandDiscography: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Discography.vue'),
-    //   loading: SkeletonBox
-    // }),
     // BandDiscography: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/Discography.vue'),
     //   loading: SkeletonBox

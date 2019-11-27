@@ -243,5 +243,363 @@
       "status": "current",
       "bandId": 1
     }
+  ],
+  "reviews": [
+    {
+      "album": "Shaped by Fire",
+      "rating": "85%",
+      "author": "hells_unicorn",
+      "date": "October 7th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Shaped by Fire",
+      "rating": "100%",
+      "author": "Petrus_Steele",
+      "date": "October 5th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Awakened",
+      "rating": "75%",
+      "author": "Petrus_Steele",
+      "date": "October 5th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Decas",
+      "rating": "20%",
+      "author": "Petrus_Steele",
+      "date": "October 3rd, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "The Powerless Rise",
+      "rating": "60%",
+      "author": "Petrus_Steele",
+      "date": "October 1st, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "50%",
+      "author": "Petrus_Steele",
+      "date": "October 1st, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "65%",
+      "author": "Petrus_Steele",
+      "date": "September 24th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "85%",
+      "author": "Petrus_Steele",
+      "date": "September 21st, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "A Long March: The First Recordings",
+      "rating": "70%",
+      "author": "Petrus_Steele",
+      "date": "September 14th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Beneath the Encasing of Ashes",
+      "rating": "80%",
+      "author": "Petrus_Steele",
+      "date": "September 14th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "Redefined",
+      "rating": "80%",
+      "author": "grimwinter13",
+      "date": "April 11th, 2019",
+      "bandId": 1
+    },
+    {
+      "album": "My Own Grave",
+      "rating": "90%",
+      "author": "Beast of Burden",
+      "date": "August 4th, 2018",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "70%",
+      "author": "BlackMetal213",
+      "date": "April 9th, 2016",
+      "bandId": 1
+    },
+    {
+      "album": "Awakened",
+      "rating": "40%",
+      "author": "bkuettel",
+      "date": "October 30th, 2015",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "65%",
+      "author": "Deathandthrashlover",
+      "date": "October 7th, 2015",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "30%",
+      "author": "gasmask_colostomy",
+      "date": "May 27th, 2015",
+      "bandId": 1
+    },
+    {
+      "album": "The Powerless Rise",
+      "rating": "75%",
+      "author": "Diamhea",
+      "date": "October 26th, 2014",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "40%",
+      "author": "dartz123",
+      "date": "September 23rd, 2014",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "79%",
+      "author": "psychosisholocausto",
+      "date": "February 23rd, 2013",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "85%",
+      "author": "metal22",
+      "date": "January 19th, 2013",
+      "bandId": 1
+    },
+    {
+      "album": "Awakened",
+      "rating": "99%",
+      "author": "ArnoldHablewitz",
+      "date": "November 12th, 2012",
+      "bandId": 1
+    },
+    {
+      "album": "Awakened",
+      "rating": "70%",
+      "author": "tcgjarhead",
+      "date": "October 16th, 2012",
+      "bandId": 1
+    },
+    {
+      "album": "Cauterize",
+      "rating": "90%",
+      "author": "DomDomMCMG",
+      "date": "July 6th, 2012",
+      "bandId": 1
+    },
+    {
+      "album": "Decas",
+      "rating": "80%",
+      "author": "RidgeDeadite",
+      "date": "May 28th, 2012",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "65%",
+      "author": "Diamhea",
+      "date": "September 23rd, 2011",
+      "bandId": 1
+    },
+    {
+      "album": "Beneath the Encasing of Ashes",
+      "rating": "100%",
+      "author": "danbedrosian",
+      "date": "August 18th, 2011",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "85%",
+      "author": "plebman",
+      "date": "June 3rd, 2011",
+      "bandId": 1
+    },
+    {
+      "album": "The Powerless Rise",
+      "rating": "84%",
+      "author": "ReapSoul964",
+      "date": "May 19th, 2011",
+      "bandId": 1
+    },
+    {
+      "album": "The Powerless Rise",
+      "rating": "90%",
+      "author": "tcgjarhead",
+      "date": "February 5th, 2011",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "83%",
+      "author": "Evangelion2014",
+      "date": "December 19th, 2010",
+      "bandId": 1
+    },
+    {
+      "album": "The Powerless Rise",
+      "rating": "85%",
+      "author": "Xyrth",
+      "date": "October 7th, 2010",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "50%",
+      "author": "Five_Nails",
+      "date": "July 24th, 2010",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "100%",
+      "author": "MetalcoreMad",
+      "date": "June 14th, 2010",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "65%",
+      "author": "JamesIII",
+      "date": "February 10th, 2010",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "50%",
+      "author": "WokeUpDead",
+      "date": "November 28th, 2009",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "77%",
+      "author": "Xeroxification",
+      "date": "October 19th, 2009",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "85%",
+      "author": "Metalwontdie",
+      "date": "July 8th, 2009",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "92%",
+      "author": "Metalwontdie",
+      "date": "July 1st, 2009",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "75%",
+      "author": "Oxidane",
+      "date": "June 20th, 2009",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "5%",
+      "author": "Hytopsis",
+      "date": "June 24th, 2008",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "60%",
+      "author": "hend",
+      "date": "March 26th, 2008",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "80%",
+      "author": "Diamhea",
+      "date": "November 13th, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "70%",
+      "author": "invaded",
+      "date": "November 2nd, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "An Ocean Between Us",
+      "rating": "75%",
+      "author": "Ethan_Gale",
+      "date": "October 2nd, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "70%",
+      "author": "NonEsDignus",
+      "date": "March 25th, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "85%",
+      "author": "kriikii_the_great",
+      "date": "March 4th, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "Shadows Are Security",
+      "rating": "57%",
+      "author": "burningsynthetic",
+      "date": "February 28th, 2007",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "78%",
+      "author": "krozza",
+      "date": "October 6th, 2004",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "75%",
+      "author": "spongerob",
+      "date": "August 13th, 2004",
+      "bandId": 1
+    },
+    {
+      "album": "As I Lay Dying / American Tragedy",
+      "rating": "80%",
+      "author": "SoulSeekJay",
+      "date": "July 7th, 2004",
+      "bandId": 1
+    },
+    {
+      "album": "Frail Words Collapse",
+      "rating": "90%",
+      "author": "SoulSeekJay",
+      "date": "July 7th, 2004"
+    }
   ]
 }
