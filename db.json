@@ -1,18 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
   "albums": [
     {
       "name": "Beneath the Encasing of Ashes",
@@ -600,6 +586,195 @@
       "rating": "90%",
       "author": "SoulSeekJay",
       "date": "July 7th, 2004"
+    }
+  ],
+  "similar": [
+    {
+      "name": "Killswitch Engage",
+      "country": "United States",
+      "genre": "Metalcore",
+      "score": 91,
+      "bandId": 1
+    },
+    {
+      "name": "All That Remains",
+      "country": "United States",
+      "genre": "Metalcore/Melodic Death Metal (early); Metalcore/Melodic Hard Rock (later)",
+      "score": 66,
+      "bandId": 1
+    },
+    {
+      "name": "Trivium",
+      "country": "United States",
+      "genre": "Metalcore, Thrash/Heavy Metal",
+      "score": 60,
+      "bandId": 1
+    },
+    {
+      "name": "Unearth",
+      "country": "United States",
+      "genre": "Metalcore",
+      "score": 55,
+      "bandId": 1
+    },
+    {
+      "name": "Shadows Fall",
+      "country": "United States",
+      "genre": "Melodic Death Metal (early), Metalcore (later)",
+      "score": 49,
+      "bandId": 1
+    },
+    {
+      "name": "Austrian Death Machine",
+      "country": "United States",
+      "genre": "Thrash Metal/Crossover/Metalcore",
+      "score": 44,
+      "bandId": 1
+    },
+    {
+      "name": "Darkest Hour",
+      "country": "United States",
+      "genre": "Melodic Death Metal/Metalcore",
+      "score": 41,
+      "bandId": 1
+    },
+    {
+      "name": "Caliban",
+      "country": "Germany",
+      "genre": "Metalcore",
+      "score": 35,
+      "bandId": 1
+    },
+    {
+      "name": "Heaven Shall Burn",
+      "country": "Germany",
+      "genre": "Melodic Death Metal/Metalcore",
+      "score": 29,
+      "bandId": 1
+    },
+    {
+      "name": "Underoath",
+      "country": "United States",
+      "genre": "Metalcore (early), Alternative Rock/Post-Hardcore/Metalcore (later)",
+      "score": 26,
+      "bandId": 1
+    },
+    {
+      "name": "Times of Grace",
+      "country": "United States",
+      "genre": "Metalcore",
+      "score": 22,
+      "bandId": 1
+    },
+    {
+      "name": "Miss May I",
+      "country": "United States",
+      "genre": "Metalcore",
+      "score": 21,
+      "bandId": 1
+    },
+    {
+      "name": "DevilDriver",
+      "country": "United States",
+      "genre": "Nu-Metal (early); Groove/Melodic Death Metal (later)",
+      "score": 17,
+      "bandId": 1
+    },
+    {
+      "name": "Sonic Syndicate",
+      "country": "Sweden",
+      "genre": "Melodic Groove Metal (early), Alternative Rock/Metalcore (later)",
+      "score": 17,
+      "bandId": 1
+    },
+    {
+      "name": "Bleeding Through",
+      "country": "United States",
+      "genre": "Metalcore",
+      "score": 17,
+      "bandId": 1
+    },
+    {
+      "name": "The Agonist",
+      "country": "Canada",
+      "genre": "Melodic Death Metal/Metalcore",
+      "score": 16,
+      "bandId": 1
+    },
+    {
+      "name": "Soilwork",
+      "country": "Sweden",
+      "genre": "Melodic Death Metal (early), Metalcore/Melodic Groove Metal (later)",
+      "score": 15,
+      "bandId": 1
+    },
+    {
+      "name": "Chimaira",
+      "country": "United States",
+      "genre": "Groove/Nu-Metal/Metalcore",
+      "score": 14,
+      "bandId": 1
+    },
+    {
+      "name": "God Forbid",
+      "country": "United States",
+      "genre": "Melodic Thrash Metal/Metalcore",
+      "score": 13,
+      "bandId": 1
+    },
+    {
+      "name": "Sylosis",
+      "country": "United Kingdom",
+      "genre": "Melodic Death/Thrash Metal",
+      "score": 11,
+      "bandId": 1
+    }
+  ],
+  "links": [
+    {
+      "site": "Bandcamp",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Deezer",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Facebook",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Homepage",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Instagram",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Myspace",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Spotify",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "Twitter",
+      "url": "https://www.google.com.br",
+      "bandId": 1
+    },
+    {
+      "site": "YouTube",
+      "url": "https://www.google.com.br",
+      "bandId": 1
     }
   ]
 }

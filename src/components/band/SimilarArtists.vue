@@ -1,27 +1,33 @@
 <template>
-  <div>
-    <Question
-      v-for="question in questions"
-      :key="question.id"
-      :question="question" />
-  </div>
+  <table>
+    <tr>
+      <th>Band name</th>
+      <th>Country</th>
+      <th>Genre</th>
+      <th>Score</th>
+    </tr>
+    <tr v-for='artist in similarArtists' v-bind:key="artist.name">
+      <td>{{artist.name}}</td>
+      <td>{{artist.country}}</td>
+      <td>{{artist.genre}}</td>
+      <td>{{artist.score}}</td>
+    </tr>
+  </table>
 </template>
 
 <script>
-import Question from '@/components/faq/Question'
+import axios from 'axios'
 export default {
-  components: {
-    Question
-  },
+  name: 'SimilarArtists',
+  props: ['bandId'],
   data () {
     return {
-      questions: [
-        { id: 1, text: 'Recommending a similar band', answer: 'No' },
-        { id: 2, text: 'Voting on recommended bands', answer: 'No' },
-        { id: 3, text: 'How votes are counted', answer: 'No' },
-        { id: 4, text: 'Vote rigging: don\'t', answer: 'No' }
-      ]
+      similarArtists: []
     }
+  },
+  async mounted () {
+    const response = await axios.get(`http://localhost:8081/api/bands/${this.bandId}/similar`)
+    this.similarArtists = response.data
   }
 }
 </script>

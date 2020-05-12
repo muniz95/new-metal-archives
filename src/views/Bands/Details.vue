@@ -44,11 +44,11 @@
       </div>
 
       <div id="similar-artists" class="addition" style="display:none">
-        <SimilarArtists />
+        <SimilarArtists bandId="1" />
       </div>
 
       <div id="related-links" class="addition" style="display:none">
-        related-links
+        <RelatedLinks bandId="1" />
       </div>
     </div>
   </div>
@@ -74,19 +74,11 @@ export default {
     SimilarArtists: lazyLoadComponent({
       componentFactory: () => import('@/components/band/SimilarArtists.vue'),
       loading: SkeletonBox
+    }),
+    RelatedLinks: lazyLoadComponent({
+      componentFactory: () => import('@/components/band/RelatedLinks.vue'),
+      loading: SkeletonBox
     })
-    // BandDiscography: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Discography.vue'),
-    //   loading: SkeletonBox
-    // }),
-    // BandDiscography: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Discography.vue'),
-    //   loading: SkeletonBox
-    // }),
-    // BandDiscography: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Discography.vue'),
-    //   loading: SkeletonBox
-    // }),
   },
   methods: {
     showTab (city, type) {

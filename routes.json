@@ -2,5 +2,7 @@
   "/api/*": "/$1",
   "/bands/:id/discography": "/albums?bandId=:id",
   "/bands/:id/members": "/artists?bandId=:id&status=current",
+  "/bands/:id/similar": "/similar?bandId=:id",
+  "/bands/:id/links": "/links?bandId=:id",
   "/bands/:id/reviews": "/reviews?bandId=:id"
 }
