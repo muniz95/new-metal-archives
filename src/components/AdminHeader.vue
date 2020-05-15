@@ -33,16 +33,14 @@
           <li><router-link :to="{name: 'FAQ'}">FAQ</router-link></li>
         </ul>
       </li>
-      <li>
-        <router-link :to="{name: 'Login'}">Login</router-link>
-      </li>
     </ul>
+
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'NMAHeader'
+  name: 'NMAAdminHeader'
 }
 </script>
 

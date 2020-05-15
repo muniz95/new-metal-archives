@@ -29,3 +29,10 @@ button {
   height: 2em;
   border-radius: 5px;
 }
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+}

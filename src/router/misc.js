@@ -11,41 +11,73 @@ export default [
   {
     path: '/user/rankings',
     name: 'UserRankings',
-    component: UserRankings
+    component: UserRankings,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/news/archive',
     name: 'NewsArchive',
-    component: NewsArchive
+    component: NewsArchive,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/reviews',
     name: 'Reviews',
-    component: Reviews
+    component: Reviews,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/rip',
     name: 'RIP',
-    component: RIP
+    component: RIP,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/reports',
     name: 'Reports',
-    component: Reports
+    component: Reports,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/help',
     name: 'Help',
-    component: Help
+    component: Help,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/rules',
     name: 'Rules',
-    component: Rules
+    component: Rules,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   },
   {
     path: '/faq',
     name: 'FAQ',
-    component: FAQ
+    component: FAQ,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
   }
 ]
