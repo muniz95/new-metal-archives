@@ -7,28 +7,33 @@
       <th>Reviews</th>
     </tr>
     <tr v-for='album in albums' v-bind:key="album.name">
-      <td>{{album.name}}</td>
-      <td>{{album.type}}</td>
-      <td>{{album.year}}</td>
-      <td>{{album.reviews}}</td>
+      <td>{{album.release.name}}</td>
+      <td>{{album.release.release_type}}</td>
+      <td>{{getYear(album.release.release_date)}}</td>
+      <td></td>
     </tr>
   </table>
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'BandDiscography',
-  props: ['bandId'],
-  data () {
-    return {
-      albums: []
+  props: ['bandId', 'albums'],
+  methods: {
+    getYear (date) {
+      return new Date(date).getFullYear()
     }
-  },
-  async mounted () {
-    const response = await axios.get(`http://localhost:8081/api/bands/${this.bandId}/discography`)
-    this.albums = response.data
   }
+  // data () {
+  //   return {
+  //     albums: []
+  //   }
+  // },
+  // async mounted () {
+  //   const response = await axios.get(`http://localhost:3000/api/v1/discography/${this.bandId}`)
+  //   this.albums = response.data
+  // }
 }
 </script>
 

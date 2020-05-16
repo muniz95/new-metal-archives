@@ -1,27 +1,26 @@
 <template>
-  <div>
+  <div v-if="band != null">
     <h2>Title</h2>
     <div>
       <div class="left">
-        <span>Country of origin: Brazil</span>
-        <span>Location: Curitiba, Paraná</span>
-        <span>Status: active</span>
+        <span>Country of origin: {{band.country.name}}</span>
+        <span>Location: {{band.location}}</span>
+        <span>
+          Status: <span :style="{color: `#${band.band_status.color}`}">
+            {{band.band_status.title}}
+          </span>
+        </span>
         <span>Formed in: 2000</span>
         <span>Years active: 2000-present</span>
       </div>
       <div class="right">
-        <span>Genre: Metalcore</span>
-        <span>Lyrical themes: N/A</span>
-        <span>Current label: Nuclear Blast</span>
+        <span>Genre: {{band.genre}}</span>
+        <span>Lyrical themes: {{band.themes}}</span>
+        <span>Current label: {{band.label.name}}</span>
       </div>
     </div>
     <p>
-      The group formed as a trio in 2000 with vocalist Tim Lambesis,
-      drummer Jordan Mancino, and guitarist Evan White, and shortly thereafter
-      released Beneath the Encasing of Ashes. The band is named after the
-      William Faulkner novel of the same name. A split CD with American Tragedy
-      followed the next year. In 2003, the band signed with Metal Blade Records
-      and released Frail Words Collapse.
+      {{band.info}}
     </p>
     <div>
       <div>
@@ -32,32 +31,43 @@
         <button v-on:click="showTab('related-links', 'addition')">Related links</button>
       </div>
       <div id="discography" class="addition">
-        <BandDiscography bandId="1" />
+        <BandDiscography :albums="this.band.participations" />
       </div>
 
       <div id="members" class="addition" style="display:none">
-        <BandMembers bandId="1" />
+        <!-- <BandMembers :bandId="this.bandId" /> -->
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <BandReviews bandId="1" />
+        <!-- <BandReviews :bandId="this.bandId" /> -->
       </div>
 
       <div id="similar-artists" class="addition" style="display:none">
-        <SimilarArtists bandId="1" />
+        <!-- <SimilarArtists :bandId="this.bandId" /> -->
       </div>
 
       <div id="related-links" class="addition" style="display:none">
-        <RelatedLinks bandId="1" />
+        <!-- <RelatedLinks :bandId="this.bandId" /> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import lazyLoadComponent from '@/utils/lazyLoader'
 import SkeletonBox from '@/components/SkeletonBox.vue'
 export default {
+  data () {
+    return {
+      band: null
+    }
+  },
+  async mounted () {
+    const {id} = this.$route.params
+    const response = await axios.get(`http://localhost:3000/api/v1/bands/${id}`)
+    this.band = response.data
+  },
   components: {
     BandDiscography: lazyLoadComponent({
       componentFactory: () => import('@/components/band/Discography.vue'),
