@@ -45,7 +45,7 @@ export default {
           localStorage.setItem('user', JSON.stringify(response.data))
           localStorage.setItem('jwt', response.headers['authorization'])
           this.$router.push('/')
-          this.$store.commit('setToken')
+          this.$store.commit('authenticate')
         }
       } catch (error) {
         if (error.response.status === 401) {

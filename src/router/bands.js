@@ -2,6 +2,7 @@ import BandsByAlphabetical from '@/views/Bands/ByAlphabetical.vue'
 import BandsByCountry from '@/views/Bands/ByCountry.vue'
 import BandsByGenre from '@/views/Bands/ByGenre.vue'
 import BandDetails from '@/views/Bands/Details.vue'
+import BandsPendingApproval from '@/views/Bands/PendingApproval.vue'
 import BandForm from '@/views/Bands/Form.vue'
 
 export default [
@@ -36,6 +37,15 @@ export default [
     path: '/bands/new',
     name: 'NewBand',
     component: BandForm,
+    meta: {
+      requiresAuth: false,
+      isAdmin: false
+    }
+  },
+  {
+    path: '/bands/queue',
+    name: 'BandsPendingApproval',
+    component: BandsPendingApproval,
     meta: {
       requiresAuth: false,
       isAdmin: false

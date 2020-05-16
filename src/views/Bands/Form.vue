@@ -78,7 +78,8 @@ export default {
         country_id: '',
         band_status_id: '',
         label_id: '',
-        formed_in: new Date(Date.now()).getFullYear()
+        formed_in: new Date(Date.now()).getFullYear(),
+        user_id: this.$store.state.user.id
       },
       countries: [],
       bandStatuses: [],
@@ -97,7 +98,9 @@ export default {
         const response = await axios.post('http://localhost:3000/api/v1/bands',
           this.band, headers)
 
-        console.log(response)
+        if (response.status === 201) {
+          alert('Done!')
+        }
       } catch (error) {
 
       }

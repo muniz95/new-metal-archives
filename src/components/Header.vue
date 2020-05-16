@@ -11,6 +11,7 @@
           <li><router-link :to="{name: 'BandsByGenre'}">Genre</router-link></li>
           <li><router-link :to="{name: 'Home'}">Random Band</router-link></li>
           <li><router-link :to="{name: 'NewBand'}">Add band</router-link></li>
+          <li><router-link :to="{name: 'BandsPendingApproval'}">Queue</router-link></li>
         </ul>
       </li>
       <li>
