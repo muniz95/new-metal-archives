@@ -38,15 +38,15 @@
       </div>
 
       <div id="versions" class="addition" style="display:none">
-        <!-- <BandReviews :bandId="this.bandId" /> -->
+        <OtherVersions :releaseId="this.release.id" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <!-- <SimilarArtists :bandId="this.bandId" /> -->
+        <!-- <SimilarArtists :releaseId="this.release.id" /> -->
       </div>
 
       <div id="notes" class="addition" style="display:none">
-        <!-- <RelatedLinks :bandId="this.bandId" /> -->
+        <!-- <RelatedLinks :releaseId="this.release.id" /> -->
       </div>
     </div>
   </div>
@@ -83,11 +83,11 @@ export default {
     Lineup: lazyLoadComponent({
       componentFactory: () => import('@/components/release/Lineup.vue'),
       loading: SkeletonBox
+    }),
+    OtherVersions: lazyLoadComponent({
+      componentFactory: () => import('@/components/release/Versions.vue'),
+      loading: SkeletonBox
     })
-    // BandReviews: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Reviews.vue'),
-    //   loading: SkeletonBox
-    // }),
     // SimilarArtists: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/SimilarArtists.vue'),
     //   loading: SkeletonBox
