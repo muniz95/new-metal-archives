@@ -5,7 +5,7 @@
     <div>
       <div class="left">
         <span>Type: {{release.release_type}}</span>
-        <span>Release date: {{release.release_date}}</span>
+        <span>Release date: {{releaseDate}}</span>
         <span>Catalog ID: {{release.catalog_id}}</span>
         <span>Genre: {{release.genre}}</span>
       </div>
@@ -34,7 +34,7 @@
       </div>
 
       <div id="lineup" class="addition" style="display:none">
-        <!-- <BandMembers :bandId="this.bandId" /> -->
+        <Lineup :releaseId="this.release.id" />
       </div>
 
       <div id="versions" class="addition" style="display:none">
@@ -64,9 +64,10 @@ export default {
   },
   computed: {
     bandsFeatured: function () {
-      return this.release != null
-        ? this.release.participations.map(r => r.band.name).join('/')
-        : ''
+      return this.release.participations.map(r => r.band.name).join('/')
+    },
+    releaseDate: function () {
+      return new Date(this.release.release_date).toLocaleDateString()
     }
   },
   async mounted () {
@@ -78,11 +79,11 @@ export default {
     SongList: lazyLoadComponent({
       componentFactory: () => import('@/components/release/SongList.vue'),
       loading: SkeletonBox
+    }),
+    Lineup: lazyLoadComponent({
+      componentFactory: () => import('@/components/release/Lineup.vue'),
+      loading: SkeletonBox
     })
-    // BandMembers: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Members.vue'),
-    //   loading: SkeletonBox
-    // }),
     // BandReviews: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/Reviews.vue'),
     //   loading: SkeletonBox
