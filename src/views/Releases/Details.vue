@@ -1,52 +1,51 @@
 <template>
-  <div v-if="band != null">
-    <h2>Title</h2>
+  <div v-if="release != null">
+    <h2>{{release.name}}</h2>
+    <h4>{{bandsFeatured}}</h4>
     <div>
       <div class="left">
-        <span>Country of origin: {{band.country.name}}</span>
-        <span>Location: {{band.location}}</span>
-        <span>
-          Status: <span :style="{color: `#${band.band_status.color}`}">
-            {{band.band_status.title}}
-          </span>
-        </span>
-        <span>Formed in: 2000</span>
-        <span>Years active: 2000-present</span>
+        <span>Type: {{release.release_type}}</span>
+        <span>Release date: {{release.release_date}}</span>
+        <span>Catalog ID: {{release.catalog_id}}</span>
+        <span>Genre: {{release.genre}}</span>
+      </div>
+      <div class="center">
+        <span>Label: {{release.label.name}}</span>
+        <span>Format: {{release.format}}</span>
+        <span>Reviews: none yet</span>
       </div>
       <div class="right">
-        <span>Genre: {{band.genre}}</span>
-        <span>Lyrical themes: {{band.themes}}</span>
-        <span>Current label: {{band.label.name}}</span>
+        <img :src="release.image" :alt="release.name">
       </div>
     </div>
     <p>
-      {{band.info}}
+      {{release.info}}
     </p>
     <div>
       <div>
-        <button v-on:click="showTab('discography', 'addition')">Discography</button>
-        <button v-on:click="showTab('members', 'addition')">Members</button>
+        <button v-on:click="showTab('songs', 'addition')">Songs</button>
+        <button v-on:click="showTab('lineup', 'addition')">Lineup</button>
+        <button v-on:click="showTab('versions', 'addition')">Other versions</button>
         <button v-on:click="showTab('reviews', 'addition')">Reviews</button>
-        <button v-on:click="showTab('similar-artists', 'addition')">Similar artists</button>
-        <button v-on:click="showTab('related-links', 'addition')">Related links</button>
+        <button v-on:click="showTab('notes', 'addition')">Additional notes</button>
       </div>
-      <div id="discography" class="addition">
-        <BandDiscography :albums="this.band.participations" />
+      <div id="songs" class="addition">
+        <SongList :discs="this.release.discs" />
       </div>
 
-      <div id="members" class="addition" style="display:none">
+      <div id="lineup" class="addition" style="display:none">
         <!-- <BandMembers :bandId="this.bandId" /> -->
       </div>
 
-      <div id="reviews" class="addition" style="display:none">
+      <div id="versions" class="addition" style="display:none">
         <!-- <BandReviews :bandId="this.bandId" /> -->
       </div>
 
-      <div id="similar-artists" class="addition" style="display:none">
+      <div id="reviews" class="addition" style="display:none">
         <!-- <SimilarArtists :bandId="this.bandId" /> -->
       </div>
 
-      <div id="related-links" class="addition" style="display:none">
+      <div id="notes" class="addition" style="display:none">
         <!-- <RelatedLinks :bandId="this.bandId" /> -->
       </div>
     </div>
@@ -60,17 +59,24 @@ import SkeletonBox from '@/components/SkeletonBox.vue'
 export default {
   data () {
     return {
-      band: null
+      release: null
+    }
+  },
+  computed: {
+    bandsFeatured: function () {
+      return this.release != null
+        ? this.release.participations.map(r => r.band.name).join('/')
+        : ''
     }
   },
   async mounted () {
     const { id } = this.$route.params
-    const response = await axios.get(`http://localhost:3000/api/v1/bands/${id}`)
-    this.band = response.data
+    const response = await axios.get(`http://localhost:3000/api/v1/releases/${id}`)
+    this.release = response.data
   },
   components: {
-    BandDiscography: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/Discography.vue'),
+    SongList: lazyLoadComponent({
+      componentFactory: () => import('@/components/release/SongList.vue'),
       loading: SkeletonBox
     })
     // BandMembers: lazyLoadComponent({

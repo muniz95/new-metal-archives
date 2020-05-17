@@ -7,7 +7,14 @@
       <th>Reviews</th>
     </tr>
     <tr v-for='album in albums' v-bind:key="album.name">
-      <td>{{album.release.name}}</td>
+      <td>
+        <router-link :to="{name: 'ReleaseDetails', params: {
+          release: album.release,
+          id: album.release.id
+        }}">
+          {{album.release.name}}
+        </router-link>
+      </td>
       <td>{{album.release.release_type}}</td>
       <td>{{getYear(album.release.release_date)}}</td>
       <td></td>
