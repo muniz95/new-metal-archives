@@ -27,7 +27,8 @@
         <button v-on:click="showTab('lineup', 'addition')">Lineup</button>
         <button v-on:click="showTab('versions', 'addition')">Other versions</button>
         <button v-on:click="showTab('reviews', 'addition')">Reviews</button>
-        <button v-on:click="showTab('notes', 'addition')">Additional notes</button>
+        <button v-on:click="showTab('notes', 'addition')"
+          v-if="this.release.additional_notes">Additional notes</button>
       </div>
       <div id="songs" class="addition">
         <SongList :discs="this.release.discs" />
@@ -45,8 +46,9 @@
         <Reviews :releaseId="this.release.id" />
       </div>
 
-      <div id="notes" class="addition" style="display:none">
-        <!-- <RelatedLinks :releaseId="this.release.id" /> -->
+      <div v-if="this.release.additional_notes" id="notes"
+        class="addition" style="display:none">
+        <AdditionalNotes :notes="this.release.additional_notes" />
       </div>
     </div>
   </div>
@@ -91,11 +93,11 @@ export default {
     Reviews: lazyLoadComponent({
       componentFactory: () => import('@/components/release/Reviews.vue'),
       loading: SkeletonBox
+    }),
+    AdditionalNotes: lazyLoadComponent({
+      componentFactory: () => import('@/components/release/AdditionalNotes.vue'),
+      loading: SkeletonBox
     })
-    // RelatedLinks: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/RelatedLinks.vue'),
-    //   loading: SkeletonBox
-    // })
   },
   methods: {
     showTab (city, type) {
