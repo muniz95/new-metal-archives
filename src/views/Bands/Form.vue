@@ -95,7 +95,7 @@ export default {
         }
       }
       try {
-        const response = await axios.post('http://localhost:3000/api/v1/bands',
+        const response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/bands`,
           this.band, headers)
 
         if (response.status === 201) {
@@ -112,9 +112,9 @@ export default {
     }
     try {
       const responses = await Promise.all([
-        axios.get('http://localhost:3000/api/v1/countries'),
-        axios.get('http://localhost:3000/api/v1/band_statuses'),
-        axios.get('http://localhost:3000/api/v1/labels')
+        axios.get(`${process.env.VUE_APP_API_URL}/api/v1/countries`),
+        axios.get(`${process.env.VUE_APP_API_URL}/api/v1/band_statuses`),
+        axios.get(`${process.env.VUE_APP_API_URL}/api/v1/labels`)
       ])
       this.countries = responses[0].data
       this.bandStatuses = responses[1].data

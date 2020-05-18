@@ -41,7 +41,8 @@ export default {
         includes: 'country,user'
       }
     }
-    const response = await axios.get(`http://localhost:3000/api/v1/bands`, params)
+    console.log(process.env)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/bands`, params)
     this.bands = response.data
   }
 }

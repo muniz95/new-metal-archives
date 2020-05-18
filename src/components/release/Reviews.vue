@@ -25,7 +25,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await axios.get(`http://localhost:3000/api/v1/releases/${this.releaseId}/reviews`)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/releases/${this.releaseId}/reviews`)
     this.reviews = response.data
   }
 }

@@ -65,7 +65,7 @@ export default {
   },
   async mounted () {
     const { id } = this.$route.params
-    const response = await axios.get(`http://localhost:3000/api/v1/bands/${id}`)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/bands/${id}`)
     this.band = response.data
   },
   components: {
