@@ -31,7 +31,6 @@ export default {
   async mounted () {
     const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/bands/${this.bandId}/members`)
     this.roles = response.data
-    console.log(response.data)
   }
 }
 </script>

@@ -7,10 +7,10 @@
       <th>Date</th>
     </tr>
     <tr v-for='review in reviews' v-bind:key="review.name">
-      <td>{{review.album}}</td>
-      <td>{{review.rating}}</td>
-      <td>{{review.author}}</td>
-      <td>{{review.date}}</td>
+      <td>{{review.release.name}}</td>
+      <td>{{review.rating}}%</td>
+      <td>{{review.user.first_name}}</td>
+      <td>{{review.created_at}}</td>
     </tr>
   </table>
 </template>
