@@ -35,19 +35,19 @@
       </div>
 
       <div id="members" class="addition" style="display:none">
-        <!-- <BandMembers :bandId="this.bandId" /> -->
+        <BandMembers :bandId="this.band.id" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <!-- <BandReviews :bandId="this.bandId" /> -->
+        <!-- <BandReviews :bandId="this.band.id" /> -->
       </div>
 
       <div id="similar-artists" class="addition" style="display:none">
-        <!-- <SimilarArtists :bandId="this.bandId" /> -->
+        <!-- <SimilarArtists :bandId="this.band.id" /> -->
       </div>
 
       <div id="related-links" class="addition" style="display:none">
-        <!-- <RelatedLinks :bandId="this.bandId" /> -->
+        <!-- <RelatedLinks :bandId="this.band.id" /> -->
       </div>
     </div>
   </div>
@@ -72,11 +72,11 @@ export default {
     BandDiscography: lazyLoadComponent({
       componentFactory: () => import('@/components/band/Discography.vue'),
       loading: SkeletonBox
+    }),
+    BandMembers: lazyLoadComponent({
+      componentFactory: () => import('@/components/band/Members.vue'),
+      loading: SkeletonBox
     })
-    // BandMembers: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/Members.vue'),
-    //   loading: SkeletonBox
-    // }),
     // BandReviews: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/Reviews.vue'),
     //   loading: SkeletonBox
