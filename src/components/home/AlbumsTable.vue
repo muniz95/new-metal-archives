@@ -12,9 +12,7 @@
 export default {
   name: 'AlbumsTable',
   props: ['album'],
-  created () {
-    console.log(this.album)
-  },
+  created () {},
   data () {
     return {
       albums: [
