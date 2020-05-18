@@ -42,7 +42,7 @@
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <!-- <SimilarArtists :releaseId="this.release.id" /> -->
+        <Reviews :releaseId="this.release.id" />
       </div>
 
       <div id="notes" class="addition" style="display:none">
@@ -87,11 +87,11 @@ export default {
     OtherVersions: lazyLoadComponent({
       componentFactory: () => import('@/components/release/Versions.vue'),
       loading: SkeletonBox
+    }),
+    Reviews: lazyLoadComponent({
+      componentFactory: () => import('@/components/release/Reviews.vue'),
+      loading: SkeletonBox
     })
-    // SimilarArtists: lazyLoadComponent({
-    //   componentFactory: () => import('@/components/band/SimilarArtists.vue'),
-    //   loading: SkeletonBox
-    // }),
     // RelatedLinks: lazyLoadComponent({
     //   componentFactory: () => import('@/components/band/RelatedLinks.vue'),
     //   loading: SkeletonBox
