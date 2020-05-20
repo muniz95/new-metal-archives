@@ -52,6 +52,15 @@ export default [
     }
   },
   {
+    path: '/bands/:id/edit',
+    name: 'BandEdit',
+    component: BandForm,
+    meta: {
+      requiresAuth: true,
+      isAdmin: true
+    }
+  },
+  {
     path: '/bands/:id',
     name: 'BandDetails',
     component: BandDetails,

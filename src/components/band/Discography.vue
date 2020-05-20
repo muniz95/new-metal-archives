@@ -1,12 +1,23 @@
 <template>
   <table>
     <tr>
+      <th></th>
       <th>Album name</th>
       <th>Type</th>
       <th>Year</th>
       <th>Reviews</th>
     </tr>
     <tr v-for='album in albums' v-bind:key="album.name">
+      <td style="align: center">
+        <button>
+          <fai icon='screwdriver' />
+        </button>
+        <router-link :to="{name: 'ReleaseEdit'}">
+          <button>
+            <fai icon='edit' />
+          </button>
+        </router-link>
+      </td>
       <td>
         <router-link :to="{name: 'ReleaseDetails', params: {
           release: album.release,
