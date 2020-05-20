@@ -12,54 +12,48 @@
         <!-- <input v-model='album.band.name' type='text' class='form-control' name='location' /> -->
       </div>
       <div class="form-area">
-        <label for='country'>Country</label>
-        <select v-model='album.country_id'>
-          <option v-for="country in countries" v-bind:value="country.id"
-            v-bind:key="country.id">
-            {{ country.name }}
-          </option>
-        </select>
+        <label for='location'>Release type</label>
+        <span>{{album.album_type}}</span>
+        <!-- <input v-model='album.band.name' type='text' class='form-control' name='location' /> -->
       </div>
       <div class="form-area">
-        <label for='albumStatus'>Status</label>
-        <select v-model='album.album_status_id'>
-          <option v-for="albumStatus in albumStatuses" v-bind:value="albumStatus.id"
-            v-bind:key="albumStatus.id">
-            {{ albumStatus.title }}
-          </option>
-        </select>
-      </div>
-      <div class="form-area">
-        <label for='formedIn'>Formed in</label>
-        <select v-model='album.formed_in'>
-          <option v-for="year in years" v-bind:value="year"
-            v-bind:key="year">
-            {{ year }}
-          </option>
-        </select>
-      </div>
-      <div class="form-area">
-        <label for='genre'>Genre</label>
-        <input v-model='album.genre' type='text' class='form-control' name='genre' />
-      </div>
-      <div class="form-area">
-        <label for='themes'>Lyrical themes</label>
-        <input v-model='album.themes' type='text' class='form-control' name='themes' />
+        <label for='location'>Release date</label>
+        <span>{{formatDate(album.album_date)}}</span>
       </div>
       <div class="form-area">
         <label for='labelId'>Current label</label>
-        <select v-model='album.label_id'>
-          <option v-for="label in labels" v-bind:value="label.id"
-            v-bind:key="label.id">
-            {{ label.name }}
-          </option>
-        </select>
+        <span>{{album.label.name}}</span>
       </div>
       <div class="form-area">
-        <label for='info'>Info</label>
-        <textarea v-model="album.info" name="info" id="info" ></textarea>
+        <label for='country'>Catalog ID</label>
+        <input type="text" v-model="album.catalog_id" name="catalogId" id="catalogId">
+      </div>
+      <div class="form-area">
+        <label for='country'>Number of copies (if limited)</label>
+        <input type="text" v-model="album.num_copies" name="numCopies" id="numCopies">
+      </div>
+      <div class="form-area">
+        <label for='country'>Version description</label>
+        <input type="text" v-model="album.description" name="description" id="description">
+      </div>
+      <div class="form-area">
+        <label for='country'>Album line-up</label>
+        <span>Click here to edit the album line-up</span>
+      </div>
+      <div class="form-area">
+        <label for='country'>Additional notes</label>
+        <input type="text" v-model="album.additional_notes" name="notes" id="notes">
+      </div>
+      <div class="form-area">
+        <label for='country'>Recording information</label>
+        <input type="text" v-model="album.recording_info" name="recInfo" id="recInfo">
+      </div>
+      <div class="form-area">
+        <label for='country'>Identifiers</label>
+        <input type="text" v-model="album.identifiers" name="identifiers" id="identifiers">
       </div>
       <input type='submit' value='Login' />
+      <button>Cancel</button>
     </form>
   </main>
 </template>
@@ -80,6 +74,7 @@ export default {
         country_id: '',
         album_status_id: '',
         label_id: '',
+        num_copies: '',
         formed_in: new Date(Date.now()).getFullYear(),
         user_id: this.$store.state.user.id
       },
@@ -91,7 +86,12 @@ export default {
   },
   methods: {
     bandsFeatured (album) {
-      return album.participations.map(x => x.band.name).join(', ')
+      return album.participations
+        ? album.participations.map(x => x.band.name).join(', ')
+        : ''
+    },
+    formatDate (date) {
+      return new Date(date).toLocaleDateString()
     },
     async handleSubmit () {
       const headers = {
@@ -100,8 +100,14 @@ export default {
         }
       }
       try {
-        const response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/albums`,
-          this.album, headers)
+        let response
+        if (this.album.id) {
+          response = await axios.put(`${process.env.VUE_APP_API_URL}/api/v1/albums/${this.album.id}`,
+            this.album, headers)
+        } else {
+          response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/albums`,
+            this.album, headers)
+        }
 
         if (response.status === 201) {
           alert('Done!')
