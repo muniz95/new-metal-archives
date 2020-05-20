@@ -38,7 +38,7 @@ export default {
       }
       try {
         const response = await axios.post(
-          `${process.env.VUE_APP_API_URL}/api/v1/login`,
+          `${process.env.VUE_APP_API_URL}/login`,
           formData
         )
         if (response.status === 200) {

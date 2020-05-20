@@ -49,7 +49,7 @@ export default {
   //   }
   // },
   // async mounted () {
-  //   const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/discography/${this.bandId}`)
+  //   const response = await axios.get(`${process.env.VUE_APP_API_URL}/discography/${this.bandId}`)
   //   this.albums = response.data
   // }
 }

@@ -102,10 +102,10 @@ export default {
       try {
         let response
         if (this.album.id) {
-          response = await axios.put(`${process.env.VUE_APP_API_URL}/api/v1/albums/${this.album.id}`,
+          response = await axios.put(`${process.env.VUE_APP_API_URL}/albums/${this.album.id}`,
             this.album, headers)
         } else {
-          response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/albums`,
+          response = await axios.post(`${process.env.VUE_APP_API_URL}/albums`,
             this.album, headers)
         }
 
@@ -123,9 +123,9 @@ export default {
     }
     try {
       // const responses = await Promise.all([
-      //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/countries`),
-      //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/album_statuses`),
-      //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/labels`)
+      //   axios.get(`${process.env.VUE_APP_API_URL}/countries`),
+      //   axios.get(`${process.env.VUE_APP_API_URL}/album_statuses`),
+      //   axios.get(`${process.env.VUE_APP_API_URL}/labels`)
       // ])
       // this.countries = responses[0].data
       // this.albumStatuses = responses[1].data
@@ -133,7 +133,7 @@ export default {
       const albumId = this.$route.params.id
       if (albumId) {
         const response = await axios.get(
-          `${process.env.VUE_APP_API_URL}/api/v1/albums/${albumId}`
+          `${process.env.VUE_APP_API_URL}/albums/${albumId}`
         )
         this.album = response.data
       }
