@@ -11,8 +11,8 @@ export default [
     name: 'BandsByAlphabetical',
     component: BandsByAlphabetical,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   },
   {
@@ -20,8 +20,8 @@ export default [
     name: 'BandsByCountry',
     component: BandsByCountry,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   },
   {
@@ -29,8 +29,8 @@ export default [
     name: 'BandsByGenre',
     component: BandsByGenre,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   },
   {
@@ -56,8 +56,8 @@ export default [
     name: 'BandEdit',
     component: BandForm,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   },
   {
@@ -65,8 +65,8 @@ export default [
     name: 'BandDetails',
     component: BandDetails,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   }
 ]
