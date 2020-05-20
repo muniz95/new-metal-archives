@@ -137,9 +137,7 @@ export default {
         )
         this.album = response.data
       }
-    } catch (error) {
-      console.error(error)
-    }
+    } catch (error) {}
   }
 }
 </script>

@@ -126,9 +126,7 @@ export default {
         ).data
         this.band = band
       }
-    } catch (error) {
-      console.error(error)
-    }
+    } catch (error) {}
   }
 }
 </script>
