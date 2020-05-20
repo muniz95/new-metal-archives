@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home.vue'
 import Login from '@/views/Login.vue'
+import NotFound from '@/views/NotFound.vue'
 import bands from './bands'
 import labels from './labels'
 import misc from './misc'
@@ -34,7 +35,11 @@ const router = new Router({
     ...bands,
     ...labels,
     ...misc,
-    ...albums
+    ...albums,
+    {
+      path: '/*',
+      component: NotFound
+    }
   ]
 })
 
