@@ -19,7 +19,7 @@ export default {
         { id: 1, text: 'General', answer: 'No' },
         { id: 2, text: 'Band moderation status', answer: 'No' },
         { id: 3, text: 'Band entry form', answer: 'No' },
-        { id: 4, text: 'Adding a band\'s release', answer: 'No' },
+        { id: 4, text: 'Adding a band\'s album', answer: 'No' },
         { id: 5, text: 'Split albums', answer: 'No' },
         { id: 6, text: 'Adding reissues and other versions', answer: 'No' },
         { id: 7, text: 'Adding an external link (for a band/artist/label)', answer: 'No' },

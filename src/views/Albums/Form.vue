@@ -1,19 +1,19 @@
 <template>
   <main>
-    <h2>New release</h2>
-    <form name='releaseForm' @submit.prevent='handleSubmit'>
+    <h2>New album</h2>
+    <form name='albumForm' @submit.prevent='handleSubmit'>
       <div class="form-area">
         <label for='name'>Album name</label>
-        <input v-model='release.name' type='text' class='form-control' name='name' />
+        <input v-model='album.name' type='text' class='form-control' name='name' />
       </div>
       <div class="form-area">
         <label for='location'>Band</label>
-        <span>{{bandsFeatured(release)}}</span>
-        <!-- <input v-model='release.band.name' type='text' class='form-control' name='location' /> -->
+        <span>{{bandsFeatured(album)}}</span>
+        <!-- <input v-model='album.band.name' type='text' class='form-control' name='location' /> -->
       </div>
       <div class="form-area">
         <label for='country'>Country</label>
-        <select v-model='release.country_id'>
+        <select v-model='album.country_id'>
           <option v-for="country in countries" v-bind:value="country.id"
             v-bind:key="country.id">
             {{ country.name }}
@@ -21,17 +21,17 @@
         </select>
       </div>
       <div class="form-area">
-        <label for='releaseStatus'>Status</label>
-        <select v-model='release.release_status_id'>
-          <option v-for="releaseStatus in releaseStatuses" v-bind:value="releaseStatus.id"
-            v-bind:key="releaseStatus.id">
-            {{ releaseStatus.title }}
+        <label for='albumStatus'>Status</label>
+        <select v-model='album.album_status_id'>
+          <option v-for="albumStatus in albumStatuses" v-bind:value="albumStatus.id"
+            v-bind:key="albumStatus.id">
+            {{ albumStatus.title }}
           </option>
         </select>
       </div>
       <div class="form-area">
         <label for='formedIn'>Formed in</label>
-        <select v-model='release.formed_in'>
+        <select v-model='album.formed_in'>
           <option v-for="year in years" v-bind:value="year"
             v-bind:key="year">
             {{ year }}
@@ -40,15 +40,15 @@
       </div>
       <div class="form-area">
         <label for='genre'>Genre</label>
-        <input v-model='release.genre' type='text' class='form-control' name='genre' />
+        <input v-model='album.genre' type='text' class='form-control' name='genre' />
       </div>
       <div class="form-area">
         <label for='themes'>Lyrical themes</label>
-        <input v-model='release.themes' type='text' class='form-control' name='themes' />
+        <input v-model='album.themes' type='text' class='form-control' name='themes' />
       </div>
       <div class="form-area">
         <label for='labelId'>Current label</label>
-        <select v-model='release.label_id'>
+        <select v-model='album.label_id'>
           <option v-for="label in labels" v-bind:value="label.id"
             v-bind:key="label.id">
             {{ label.name }}
@@ -57,7 +57,7 @@
       </div>
       <div class="form-area">
         <label for='info'>Info</label>
-        <textarea v-model="release.info" name="info" id="info" ></textarea>
+        <textarea v-model="album.info" name="info" id="info" ></textarea>
       </div>
       <input type='submit' value='Login' />
     </form>
@@ -67,24 +67,24 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'ReleaseForm',
+  name: 'AlbumForm',
   props: ['albumId'],
   data () {
     return {
-      release: {
+      album: {
         name: '',
         location: '',
         genre: '',
         themes: '',
         info: '',
         country_id: '',
-        release_status_id: '',
+        album_status_id: '',
         label_id: '',
         formed_in: new Date(Date.now()).getFullYear(),
         user_id: this.$store.state.user.id
       },
       countries: [],
-      releaseStatuses: [],
+      albumStatuses: [],
       labels: [],
       years: []
     }
@@ -100,8 +100,8 @@ export default {
         }
       }
       try {
-        const response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/releases`,
-          this.release, headers)
+        const response = await axios.post(`${process.env.VUE_APP_API_URL}/api/v1/albums`,
+          this.album, headers)
 
         if (response.status === 201) {
           alert('Done!')
@@ -118,18 +118,18 @@ export default {
     try {
       // const responses = await Promise.all([
       //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/countries`),
-      //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/release_statuses`),
+      //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/album_statuses`),
       //   axios.get(`${process.env.VUE_APP_API_URL}/api/v1/labels`)
       // ])
       // this.countries = responses[0].data
-      // this.releaseStatuses = responses[1].data
+      // this.albumStatuses = responses[1].data
       // this.labels = responses[2].data
       const albumId = this.$route.params.id
       if (albumId) {
         const response = await axios.get(
-          `${process.env.VUE_APP_API_URL}/api/v1/releases/${albumId}`
+          `${process.env.VUE_APP_API_URL}/api/v1/albums/${albumId}`
         )
-        this.release = response.data
+        this.album = response.data
       }
     } catch (error) {
       console.error(error)

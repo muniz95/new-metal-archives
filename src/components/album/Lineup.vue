@@ -11,14 +11,14 @@
 import axios from 'axios'
 export default {
   name: 'BandMembers',
-  props: ['releaseId'],
+  props: ['albumId'],
   data () {
     return {
       lineups: []
     }
   },
   async mounted () {
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/releases/${this.releaseId}/lineup`)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/albums/${this.albumId}/lineup`)
     this.lineups = response.data
   }
 }

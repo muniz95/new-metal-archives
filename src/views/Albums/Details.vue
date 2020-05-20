@@ -1,25 +1,25 @@
 <template>
-  <div v-if="release != null">
-    <h2>{{release.name}}</h2>
+  <div v-if="album != null">
+    <h2>{{album.name}}</h2>
     <h4>{{bandsFeatured}}</h4>
     <div>
       <div class="left">
-        <span>Type: {{release.release_type}}</span>
-        <span>Release date: {{releaseDate}}</span>
-        <span>Catalog ID: {{release.catalog_id}}</span>
-        <span>Genre: {{release.genre}}</span>
+        <span>Type: {{album.album_type}}</span>
+        <span>Album date: {{albumDate}}</span>
+        <span>Catalog ID: {{album.catalog_id}}</span>
+        <span>Genre: {{album.genre}}</span>
       </div>
       <div class="center">
-        <span>Label: {{release.label.name}}</span>
-        <span>Format: {{release.format}}</span>
+        <span>Label: {{album.label.name}}</span>
+        <span>Format: {{album.format}}</span>
         <span>Reviews: none yet</span>
       </div>
       <div class="right">
-        <img :src="release.image" :alt="release.name">
+        <img :src="album.image" :alt="album.name">
       </div>
     </div>
     <p>
-      {{release.info}}
+      {{album.info}}
     </p>
     <div>
       <div>
@@ -28,27 +28,27 @@
         <button v-on:click="showTab('versions', 'addition')">Other versions</button>
         <button v-on:click="showTab('reviews', 'addition')">Reviews</button>
         <button v-on:click="showTab('notes', 'addition')"
-          v-if="this.release.additional_notes">Additional notes</button>
+          v-if="this.album.additional_notes">Additional notes</button>
       </div>
       <div id="songs" class="addition">
-        <SongList :discs="this.release.discs" />
+        <SongList :discs="this.album.discs" />
       </div>
 
       <div id="lineup" class="addition" style="display:none">
-        <Lineup :releaseId="this.release.id" />
+        <Lineup :albumId="this.album.id" />
       </div>
 
       <div id="versions" class="addition" style="display:none">
-        <OtherVersions :releaseId="this.release.id" />
+        <OtherVersions :albumId="this.album.id" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <Reviews :releaseId="this.release.id" />
+        <Reviews :albumId="this.album.id" />
       </div>
 
-      <div v-if="this.release.additional_notes" id="notes"
+      <div v-if="this.album.additional_notes" id="notes"
         class="addition" style="display:none">
-        <AdditionalNotes :notes="this.release.additional_notes" />
+        <AdditionalNotes :notes="this.album.additional_notes" />
       </div>
     </div>
   </div>
@@ -61,41 +61,41 @@ import SkeletonBox from '@/components/SkeletonBox.vue'
 export default {
   data () {
     return {
-      release: null
+      album: null
     }
   },
   computed: {
     bandsFeatured: function () {
-      return this.release.participations.map(r => r.band.name).join('/')
+      return this.album.participations.map(r => r.band.name).join('/')
     },
-    releaseDate: function () {
-      return new Date(this.release.release_date).toLocaleDateString()
+    albumDate: function () {
+      return new Date(this.album.album_date).toLocaleDateString()
     }
   },
   async mounted () {
     const { id } = this.$route.params
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/releases/${id}`)
-    this.release = response.data
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/albums/${id}`)
+    this.album = response.data
   },
   components: {
     SongList: lazyLoadComponent({
-      componentFactory: () => import('@/components/release/SongList.vue'),
+      componentFactory: () => import('@/components/album/SongList.vue'),
       loading: SkeletonBox
     }),
     Lineup: lazyLoadComponent({
-      componentFactory: () => import('@/components/release/Lineup.vue'),
+      componentFactory: () => import('@/components/album/Lineup.vue'),
       loading: SkeletonBox
     }),
     OtherVersions: lazyLoadComponent({
-      componentFactory: () => import('@/components/release/Versions.vue'),
+      componentFactory: () => import('@/components/album/Versions.vue'),
       loading: SkeletonBox
     }),
     Reviews: lazyLoadComponent({
-      componentFactory: () => import('@/components/release/Reviews.vue'),
+      componentFactory: () => import('@/components/album/Reviews.vue'),
       loading: SkeletonBox
     }),
     AdditionalNotes: lazyLoadComponent({
-      componentFactory: () => import('@/components/release/AdditionalNotes.vue'),
+      componentFactory: () => import('@/components/album/AdditionalNotes.vue'),
       loading: SkeletonBox
     })
   },

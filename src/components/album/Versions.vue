@@ -1,7 +1,7 @@
 <template>
   <table>
     <tr>
-      <th>Release date</th>
+      <th>Album date</th>
       <th>Label</th>
       <th>Catalog ID</th>
       <th>Format</th>
@@ -9,8 +9,8 @@
     </tr>
     <tr v-for='version in versions' v-bind:key="version.id">
       <td>
-        <router-link :to="{name: 'ReleaseDetails', params: {id: version.id}}">
-          {{releaseDate(version.release_date)}}
+        <router-link :to="{name: 'AlbumDetails', params: {id: version.id}}">
+          {{albumDate(version.album_date)}}
         </router-link>
       </td>
       <td>{{version.label.name}}</td>
@@ -25,19 +25,19 @@
 import axios from 'axios'
 export default {
   name: 'OtherVersions',
-  props: ['releaseId'],
+  props: ['albumId'],
   data () {
     return {
       versions: []
     }
   },
   methods: {
-    releaseDate: function (date) {
+    albumDate: function (date) {
       return new Date(date).toLocaleDateString()
     }
   },
   async mounted () {
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/releases/${this.releaseId}/versions`)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/albums/${this.albumId}/versions`)
     this.versions = response.data
   }
 }

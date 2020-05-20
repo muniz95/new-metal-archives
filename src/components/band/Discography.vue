@@ -12,22 +12,22 @@
         <button>
           <fai icon='screwdriver' />
         </button>
-        <router-link :to="{name: 'ReleaseEdit'}">
+        <router-link :to="{name: 'AlbumEdit'}">
           <button>
             <fai icon='edit' />
           </button>
         </router-link>
       </td>
       <td>
-        <router-link :to="{name: 'ReleaseDetails', params: {
-          release: album.release,
-          id: album.release.id
+        <router-link :to="{name: 'AlbumDetails', params: {
+          album: album.album,
+          id: album.album.id
         }}">
-          {{album.release.name}}
+          {{album.album.name}}
         </router-link>
       </td>
-      <td>{{album.release.release_type}}</td>
-      <td>{{getYear(album.release.release_date)}}</td>
+      <td>{{album.album.album_type}}</td>
+      <td>{{getYear(album.album.album_date)}}</td>
       <td></td>
     </tr>
   </table>

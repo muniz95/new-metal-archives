@@ -56,7 +56,7 @@
       </div>
       <div>&nbsp;</div>
       <div>
-        <h2>Upcoming releases</h2>
+        <h2>Upcoming albums</h2>
         <AlbumsTable category="upcoming" />
       </div>
     </div>

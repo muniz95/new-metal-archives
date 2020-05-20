@@ -7,7 +7,7 @@
       <th>Date</th>
     </tr>
     <tr v-for='review in reviews' v-bind:key="review.name">
-      <td>{{review.release.name}}</td>
+      <td>{{review.album.name}}</td>
       <td>{{review.rating}}%</td>
       <td>{{review.user.first_name}}</td>
       <td>{{review.created_at}}</td>

@@ -5,7 +5,7 @@ import Login from '@/views/Login.vue'
 import bands from './bands'
 import labels from './labels'
 import misc from './misc'
-import releases from './releases'
+import albums from './albums'
 
 Vue.use(Router)
 
@@ -34,7 +34,7 @@ const router = new Router({
     ...bands,
     ...labels,
     ...misc,
-    ...releases
+    ...albums
   ]
 })
 

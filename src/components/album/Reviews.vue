@@ -13,7 +13,7 @@
 import axios from 'axios'
 export default {
   name: 'OtherVersions',
-  props: ['releaseId'],
+  props: ['albumId'],
   data () {
     return {
       reviews: []
@@ -25,7 +25,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/releases/${this.releaseId}/reviews`)
+    const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/v1/albums/${this.albumId}/reviews`)
     this.reviews = response.data
   }
 }
