@@ -7,8 +7,17 @@ export default [
     name: 'AlbumEdit',
     component: AlbumForm,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
+    }
+  },
+  {
+    path: '/albums/new',
+    name: 'NewAlbum',
+    component: AlbumForm,
+    meta: {
+      requiresAuth: false,
+      isAdmin: false
     }
   },
   {
@@ -16,8 +25,8 @@ export default [
     name: 'AlbumDetails',
     component: AlbumDetails,
     meta: {
-      requiresAuth: true,
-      isAdmin: true
+      requiresAuth: false,
+      isAdmin: false
     }
   }
 ]

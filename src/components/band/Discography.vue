@@ -1,6 +1,13 @@
 <template>
   <table>
     <tr>
+      <router-link :to="{name: 'NewAlbum'}">
+        <button>
+          <fai aria-hidden="true" icon="plus" title="Add a band" />
+        </button>
+      </router-link>
+    </tr>
+    <tr>
       <th></th>
       <th>Album name</th>
       <th>Type</th>
