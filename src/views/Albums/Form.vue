@@ -1,5 +1,17 @@
 <template>
   <main>
+    <button v-if="false"
+      type="button"
+      class="btn"
+      @click="showModal"
+    >
+      Open Modal!
+    </button>
+
+    <Modal
+      v-show="isModalOpen"
+      @close="closeModal"
+    />
     <h2>New album</h2>
     <form name='albumForm' @submit.prevent='handleSubmit'>
       <div class="form-area">
@@ -60,8 +72,10 @@
 
 <script>
 import axios from 'axios'
+import Modal from '@/components/Modal.vue'
 export default {
   name: 'AlbumForm',
+  components: { Modal },
   props: ['albumId'],
   data () {
     return {
@@ -81,7 +95,8 @@ export default {
       countries: [],
       albumStatuses: [],
       labels: [],
-      years: []
+      years: [],
+      isModalOpen: false
     }
   },
   methods: {
@@ -115,6 +130,12 @@ export default {
       } catch (error) {
 
       }
+    },
+    showModal () {
+      this.isModalOpen = true
+    },
+    closeModal () {
+      this.isModalOpen = false
     }
   },
   async mounted () {
