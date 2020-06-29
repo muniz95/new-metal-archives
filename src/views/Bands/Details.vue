@@ -1,7 +1,7 @@
 <template>
   <div v-if="band != null">
     <h2>Title</h2>
-    <div>
+    <div class="band-info">
       <div class="left">
         <span>Country of origin: {{band.country.name}}</span>
         <span>Location: {{band.location}}</span>
@@ -101,5 +101,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.band-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left,.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
 </style>
