@@ -5,11 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "dev": "concurrently --kill-others \"npm run api:dev\" \"npm run serve\"",
-    "api:dev": "json-server db.json --routes routes.json -p 8081"
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "api:dev": "json-server db.json --routes routes.json -p 8081",
+    "dev": "concurrently --kill-others \"npm run api:dev\" \"npm run serve\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -21,6 +21,7 @@
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vuetify": "^2.4.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -38,8 +39,10 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "json-server": "^0.15.1",
-    "sass": "^1.18.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.4",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.7.0"
   }
 }

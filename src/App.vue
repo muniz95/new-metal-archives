@@ -1,11 +1,12 @@
 <template>
-  <div id="app">
+  <v-app>
     <NMAHeader v-if="!this.$store.state.authenticated" />
     <NMAAdminHeader v-if="this.$store.state.authenticated" />
-    <main>
-      <router-view></router-view>
-    </main>
-  </div>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
