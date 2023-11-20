@@ -1,5 +1,5 @@
 import AlbumForm from '@/views/Albums/Form.vue'
-import AlbumDetails from '@/views/Albums/Details.vue'
+import AlbumDetails from '@/views/Albums/AlbumDetails.vue'
 
 export default [
   {

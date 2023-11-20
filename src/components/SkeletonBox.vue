@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: `SkeletonBox`,
+  name: 'SkeletonBox',
   props: {
     maxWidth: {
       default: 100,
@@ -18,7 +18,7 @@ export default {
       type: Number
     },
     height: {
-      default: `1em`,
+      default: '1em',
       type: String
     },
     width: {

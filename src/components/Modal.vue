@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Modal',
+  name: 'modal-item',
   methods: {
     close () {
       this.$emit('close')
