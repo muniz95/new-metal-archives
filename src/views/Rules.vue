@@ -52,9 +52,7 @@
 </template>
 
 <script>
-import RulesComponents from '@/components/rules'
 export default {
-  components: RulesComponents,
   methods: {
     showTab (city, type) {
       [...document.getElementsByClassName(type)].forEach(el => { el.style.display = 'none' })
