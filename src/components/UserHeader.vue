@@ -59,8 +59,6 @@ export default {
       this.$emit("close");
     },
     switchDrawer() {
-      console.log('switchDrawer');
-
       this.isVisible = !this.isVisible;
     }
   },
