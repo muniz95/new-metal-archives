@@ -70,7 +70,7 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
 import Modal from '@/components/Modal.vue'
 export default {

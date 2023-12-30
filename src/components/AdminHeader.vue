@@ -38,12 +38,6 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: 'NMAAdminHeader'
-}
-</script>
-
 <style lang="scss">
   header {
     margin: 0;

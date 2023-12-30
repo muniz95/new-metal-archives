@@ -4,10 +4,10 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['notes']
-}
+<script setup lang="ts">
+defineProps<{
+  notes: string
+}>()
 </script>
 
 <style>

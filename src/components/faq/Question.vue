@@ -5,8 +5,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
+  name: 'NMAQuestion',
   props: ['question']
 }
 </script>

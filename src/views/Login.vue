@@ -18,10 +18,10 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
 export default {
-  name: 'login',
+  name: 'NMALogin',
   data () {
     return {
       email: '',
