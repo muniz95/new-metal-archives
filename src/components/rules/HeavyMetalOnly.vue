@@ -8,8 +8,8 @@
   </div>
 </template>
 
-<script>
-import Question from '@/components/faq/Question'
+<script lang="ts">
+import Question from '@/components/faq/Question.vue'
 export default {
   components: {
     Question

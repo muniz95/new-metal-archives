@@ -53,7 +53,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
 import lazyLoadComponent from '@/utils/lazyLoader'
 import SkeletonBox from '@/components/SkeletonBox.vue'

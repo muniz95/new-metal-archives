@@ -17,10 +17,9 @@
   </div>
 </template>
 
-<script>
-import FAQQuestion from '@/components/faq/Question'
+<script lang="ts">
+import FAQQuestion from '../components/faq/Question.vue'
 export default {
-  name: 'faq',
   components: {
     FAQQuestion
   },

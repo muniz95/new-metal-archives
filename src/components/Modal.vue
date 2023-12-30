@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
   name: 'modal-item',
   methods: {
@@ -10,7 +10,7 @@ export default {
 </script>
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop">
+    <div class="modal-backdrop" v-show="true">
       <div class="modal"
         role="dialog"
         aria-labelledby="modalTitle"

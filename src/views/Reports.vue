@@ -34,14 +34,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import ReportsComponents from '@/components/reports'
 export default {
+  name: 'NMAReports',
   components: ReportsComponents,
   methods: {
-    showTab (city, type) {
-      [...document.getElementsByClassName(type)].forEach(el => { el.style.display = 'none' })
-      document.getElementById(city).style.display = 'block'
+    showTab (city: string, type: string) {
+      [...document.getElementsByClassName(type)].forEach(
+        (el: any) => { el.style.display = 'none' }
+      )
+      document.getElementById(city)!.style.display = 'block'
     }
   }
 }

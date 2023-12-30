@@ -2,9 +2,9 @@
   <div>R.I.P.</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-
+  name: 'NMARip'
 }
 </script>
 
