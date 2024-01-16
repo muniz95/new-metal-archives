@@ -1,10 +1,15 @@
 <template>
-  <nav>
+  <div id="openModal" class="closebtn" @click="switchDrawer">&times;</div>
+  <nav data-drawer-prevent-scroll="body" :class="{ 'is-visible': isVisible }">
+    <ul>
+      <div class="closebtn" @click="switchDrawer">X</div>
+    </ul>
     <ul>
       <li>
         <RouterLink to="/">Home</RouterLink>
       </li>
-      <li><RouterLink to="/">Bands</RouterLink>
+      <li>
+        Bands
         <ul>
           <li><RouterLink to="/bands/alphabetical">Alphabetical</RouterLink></li>
           <li><RouterLink to="/bands/country">Country</RouterLink></li>
@@ -15,14 +20,14 @@
         </ul>
       </li>
       <li>
-        <RouterLink to="/">Labels</RouterLink>
+        Labels
         <ul>
           <li><RouterLink to="/labels/alphabetical">Alphabetical</RouterLink></li>
           <li><RouterLink to="/labels/country">Country</RouterLink></li>
         </ul>
       </li>
       <li>
-        <RouterLink to="/">Others</RouterLink>
+        Others
         <ul>
           <li><RouterLink to="/user/rankings">User Rankings</RouterLink></li>
           <li><RouterLink to="/news/archive">News Archive</RouterLink></li>
@@ -39,123 +44,95 @@
       </li>
     </ul>
   </nav>
+  <div id="placeholder">&nbsp;</div>
 </template>
 
-<script setup lang="ts">
-import { RouterLink } from 'vue-router'
+<script lang="ts">
+export default {
+  data() {
+    return {
+      isVisible: false,
+    };
+  },
+  methods: {
+    closeDrawer() {
+      console.log("closeDrawer");
+      this.$emit("close");
+    },
+    switchDrawer() {
+      this.isVisible = !this.isVisible;
+    }
+  },
+  mounted() {
+    this.isVisible = false;
+  },
+}
 </script>
 
 <style lang="scss">
-  header {
-    margin: 0;
-    height: 10%;
-    padding: 0 16px 0 24px;
-    color: #ffffff;
+  @media (max-width: 1023px) {
+    nav {
+      height: 100%;
+      width: 300px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      visibility: hidden;
+
+      &.is-visible {
+        visibility: visible;
+      }
+
+      & > a:hover {
+        color: #f1f1f1;
+      }
+
+      &.closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    }
+
+    #placeholder {
+      display: none;
+    }
   }
 
-  header span {
-    display: block;
-    position: relative;
-    // font-size: 20px;
-    line-height: 1;
-    letter-spacing: .02em;
-    // font-weight: 400;
-    box-sizing: border-box;
-    padding-top: 16px;
-    color: #6D3F40;
-  }
+  @media (min-width: 1024px) {
+    nav {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      left: 0;
+      position: fixed;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
 
-  h1 {
-    font-size: 45px;
-    text-align: center;
-    color: #FFF;
-  }
+      &.is-visible {
+        visibility: visible;
+      }
 
-  h3 {
-    font-size: 30px;
-    text-align: center;
-    color: #FFF;
-  }
+      & > a:hover {
+        color: #f1f1f1;
+      }
 
-  h3 a {
-    color: #FFF;
-  }
+    }
 
-  a {
-    color: #FFF;
-  }
+    #openModal {
+      display: none;
+    }
 
-  h1 {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 45px;
-    font-family: 'Bree Serif', 'serif';
-  }
-
-  p {
-    text-align: center;
-  }
-
-  nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-  }
-
-  nav ul li {
-    display: inline-block;
-    background-color: #000000;
-  }
-
-  nav a {
-    display: block;
-    padding: 0 10px;
-    color: #FFF;
-    font-size: 15px;
-    line-height: 45px;
-    text-decoration: none;
-  }
-
-  nav a:hover {
-    background-color: #6D3F40;
-  }
-
-  /* Hide Dropdowns by Default */
-
-  nav ul ul {
-    display: none;
-    position: absolute;
-    top: 45px;
-    /* the height of the main nav */
-  }
-
-  /* Display Dropdowns on Hover */
-
-  nav ul li:hover>ul {
-    display: inherit;
-  }
-
-  nav ul ul li {
-    width: 170px;
-    float: none;
-    display: list-item;
-    position: relative;
-  }
-
-  nav ul ul ul li {
-    position: relative;
-    top: -45px;
-    left: 170px;
-  }
-
-  /* Change this in order to change the Dropdown symbol */
-
-  li>a:after {
-    content: ' +';
-  }
-
-  li>a:only-child:after {
-    content: '';
+    #placeholder {
+      width: 300px;
+    }
   }
 </style>
