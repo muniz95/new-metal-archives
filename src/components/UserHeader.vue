@@ -1,5 +1,5 @@
 <template>
-  <div class="closebtn" @click="switchDrawer">&times;</div>
+  <div id="openModal" class="closebtn" @click="switchDrawer">&times;</div>
   <nav data-drawer-prevent-scroll="body" :class="{ 'is-visible': isVisible }">
     <ul>
       <div class="closebtn" @click="switchDrawer">X</div>
@@ -44,6 +44,7 @@
       </li>
     </ul>
   </nav>
+  <div id="placeholder">&nbsp;</div>
 </template>
 
 <script lang="ts">
@@ -68,34 +69,70 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-  nav {
-    height: 100%; /* 100% Full-height */
-    width: 300px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    visibility: hidden;
-
-    &.is-visible {
-      visibility: visible;
-    }
-
-    & > a:hover {
-      color: #f1f1f1;
-    }
-
-    &.closebtn {
-      position: absolute;
+<style lang="scss">
+  @media (max-width: 1023px) {
+    nav {
+      height: 100%;
+      width: 300px;
+      position: fixed;
+      z-index: 1;
       top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      visibility: hidden;
+
+      &.is-visible {
+        visibility: visible;
+      }
+
+      & > a:hover {
+        color: #f1f1f1;
+      }
+
+      &.closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    }
+
+    #placeholder {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    nav {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      left: 0;
+      position: fixed;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+
+      &.is-visible {
+        visibility: visible;
+      }
+
+      & > a:hover {
+        color: #f1f1f1;
+      }
+
+    }
+
+    #openModal {
+      display: none;
+    }
+
+    #placeholder {
+      width: 300px;
     }
   }
 </style>
