@@ -23,15 +23,16 @@
 
 <script lang="ts">
 import axios from 'axios'
+import Band from '@/entities/band';
 export default {
   name: 'BandsPendingApproval',
   data () {
     return {
-      bands: []
+      bands: new Array<Band>()
     }
   },
   methods: {
-    parseDate (date) {
+    parseDate (date: string) {
       return new Date(date).toLocaleDateString()
     }
   },

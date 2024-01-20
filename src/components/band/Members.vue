@@ -10,21 +10,22 @@
 </template>
 
 <script lang="ts">
+import type Role from '@/entities/role'
 import axios from 'axios'
 export default {
   name: 'BandMembers',
   props: ['bandId'],
   data () {
     return {
-      roles: []
+      roles: new Array<Role>()
     }
   },
   methods: {
-    relatedProjects (role) {
+    relatedProjects (role: Role) {
       const projects = role.artist.roles.map(role => role.band.name).join(', ')
       return `See also: ${projects}`
     },
-    end (date) {
+    end (date: number) {
       return date || 'present'
     }
   },

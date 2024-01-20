@@ -6,7 +6,7 @@
       <th>Author</th>
       <th>Date</th>
     </tr>
-    <tr v-for='review in reviews' v-bind:key="review.name">
+    <tr v-for='review in reviews' v-bind:key="review.id">
       <td>{{review.album.name}}</td>
       <td>{{review.rating}}%</td>
       <td>{{review.user.first_name}}</td>
@@ -16,13 +16,14 @@
 </template>
 
 <script lang="ts">
+import type Review from '@/entities/review'
 import axios from 'axios'
 export default {
   name: 'BandReviews',
   props: ['bandId'],
   data () {
     return {
-      reviews: []
+      reviews: new Array<Review>()
     }
   },
   async mounted () {

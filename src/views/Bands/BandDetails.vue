@@ -31,23 +31,23 @@
         <button v-on:click="showTab('related-links', 'addition')">Related links</button>
       </div>
       <div id="discography" class="addition">
-        <BandDiscography :albums="this.band.participations" />
+        <BandDiscography :albums="band.participations" />
       </div>
 
       <div id="members" class="addition" style="display:none">
-        <BandMembers :bandId="this.band.id" />
+        <BandMembers :bandId="band.id" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <BandReviews :bandId="this.band.id" />
+        <BandReviews :bandId="band.id" />
       </div>
 
       <div id="similar-artists" class="addition" style="display:none">
-        <SimilarArtists :bandId="this.band.id" />
+        <SimilarArtists :bandId="band.id" />
       </div>
 
       <div id="related-links" class="addition" style="display:none">
-        <RelatedLinks :bandId="this.band.id" />
+        <RelatedLinks :bandId="band.id" />
       </div>
     </div>
   </div>
@@ -55,12 +55,11 @@
 
 <script lang="ts">
 import axios from 'axios'
-import lazyLoadComponent from '@/utils/lazyLoader'
-import SkeletonBox from '@/components/SkeletonBox.vue'
+import type Band from '@/entities/band'
 export default {
   data () {
     return {
-      band: null
+      band: null as Band | null
     }
   },
   async mounted () {
@@ -69,33 +68,20 @@ export default {
     this.band = response.data
   },
   components: {
-    BandDiscography: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/Discography.vue'),
-      loading: SkeletonBox
-    }),
-    BandMembers: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/Members.vue'),
-      loading: SkeletonBox
-    }),
-    BandReviews: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/Reviews.vue'),
-      loading: SkeletonBox
-    }),
-    SimilarArtists: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/SimilarArtists.vue'),
-      loading: SkeletonBox
-    }),
-    RelatedLinks: lazyLoadComponent({
-      componentFactory: () => import('@/components/band/RelatedLinks.vue'),
-      loading: SkeletonBox
-    })
+    BandDiscography: () => import('@/components/band/Discography.vue'),
+    BandMembers: () => import('@/components/band/Members.vue'),
+    BandReviews: () => import('@/components/band/Reviews.vue'),
+    SimilarArtists: () => import('@/components/band/SimilarArtists.vue'),
+    RelatedLinks: () => import('@/components/band/RelatedLinks.vue'),
   },
   methods: {
-    showTab (city, type) {
-      [...document.getElementsByClassName(type)].forEach(el => {
-        el.style.display = 'none'
-      })
-      document.getElementById(city).style.display = 'block'
+    // TODO: re-implement this logic without direct DOM manipulation
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    showTab (city: string, type: string) {
+      // [...document.getElementsByClassName(type)].forEach(el => {
+      //   el.style.display = 'none'
+      // })
+      // document.getElementById(city).style.display = 'block'
     }
   }
 }

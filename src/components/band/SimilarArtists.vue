@@ -16,13 +16,14 @@
 </template>
 
 <script lang="ts">
+import type Band from '@/entities/band'
 import axios from 'axios'
 export default {
   name: 'SimilarArtists',
   props: ['bandId'],
   data () {
     return {
-      similarArtists: []
+      similarArtists: new Array<Band>()
     }
   },
   async mounted () {
