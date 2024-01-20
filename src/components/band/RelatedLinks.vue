@@ -7,13 +7,14 @@
 </template>
 
 <script lang="ts">
+import type Link from '@/entities/link'
 import axios from 'axios'
 export default {
   name: 'RelatedLinks',
   props: ['bandId'],
   data () {
     return {
-      links: []
+      links: new Array<Link>()
     }
   },
   async mounted () {

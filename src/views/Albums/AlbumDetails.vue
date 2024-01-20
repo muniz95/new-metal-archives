@@ -28,48 +28,47 @@
         <button v-on:click="showTab('versions', 'addition')">Other versions</button>
         <button v-on:click="showTab('reviews', 'addition')">Reviews</button>
         <button v-on:click="showTab('notes', 'addition')"
-          v-if="this.album.additional_notes">Additional notes</button>
+          v-if="album.additional_notes">Additional notes</button>
       </div>
       <div id="songs" class="addition">
-        <SongList :discs="this.album.discs" />
+        <SongList :discs="album.discs" />
       </div>
 
       <div id="lineup" class="addition" style="display:none">
-        <Lineup :albumId="this.album.id" />
+        <Lineup :albumId="album.id" />
       </div>
 
       <div id="versions" class="addition" style="display:none">
-        <OtherVersions :albumId="this.album.id" />
+        <OtherVersions :albumId="album.id" />
       </div>
 
       <div id="reviews" class="addition" style="display:none">
-        <Reviews :albumId="this.album.id" />
+        <Reviews :albumId="album.id" />
       </div>
 
-      <div v-if="this.album.additional_notes" id="notes"
+      <div v-if="album.additional_notes" id="notes"
         class="addition" style="display:none">
-        <AdditionalNotes :notes="this.album.additional_notes" />
+        <AdditionalNotes :notes="album.additional_notes" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import type Album from '@/entities/album'
 import axios from 'axios'
-import lazyLoadComponent from '@/utils/lazyLoader'
-import SkeletonBox from '@/components/SkeletonBox.vue'
 export default {
   data () {
     return {
-      album: null
+      album: null as Album | null
     }
   },
   computed: {
     bandsFeatured: function () {
-      return this.album.participations.map(r => r.band.name).join('/')
+      return this.album!.participations.map(r => r.band.name).join('/')
     },
     albumDate: function () {
-      return new Date(this.album.album_date).toLocaleDateString()
+      return new Date(this.album!.album_date).toLocaleDateString()
     }
   },
   async mounted () {
@@ -78,33 +77,20 @@ export default {
     this.album = response.data
   },
   components: {
-    SongList: lazyLoadComponent({
-      componentFactory: () => import('@/components/album/SongList.vue'),
-      loading: SkeletonBox
-    }),
-    Lineup: lazyLoadComponent({
-      componentFactory: () => import('@/components/album/Lineup.vue'),
-      loading: SkeletonBox
-    }),
-    OtherVersions: lazyLoadComponent({
-      componentFactory: () => import('@/components/album/Versions.vue'),
-      loading: SkeletonBox
-    }),
-    Reviews: lazyLoadComponent({
-      componentFactory: () => import('@/components/album/Reviews.vue'),
-      loading: SkeletonBox
-    }),
-    AdditionalNotes: lazyLoadComponent({
-      componentFactory: () => import('@/components/album/AdditionalNotes.vue'),
-      loading: SkeletonBox
-    })
+    SongList: () => import('@/components/album/SongList.vue'),
+    Lineup: () => import('@/components/album/Lineup.vue'),
+    OtherVersions: () => import('@/components/album/Versions.vue'),
+    Reviews: () => import('@/components/album/Reviews.vue'),
+    AdditionalNotes: () => import('@/components/album/AdditionalNotes.vue'),
   },
   methods: {
-    showTab (city, type) {
-      [...document.getElementsByClassName(type)].forEach(el => {
-        el.style.display = 'none'
-      })
-      document.getElementById(city).style.display = 'block'
+    // TODO: re-implement this logic without direct DOM manipulation
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    showTab (city: string, type: string) {
+      // [...document.getElementsByClassName(type)].forEach(el => {
+      //   el.style.display = 'none'
+      // })
+      // document.getElementById(city).style.display = 'block'
     }
   }
 }

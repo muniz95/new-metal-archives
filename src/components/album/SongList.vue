@@ -20,7 +20,7 @@ export default {
   name: 'SongList',
   props: ['discs'],
   methods: {
-    getYear (date) {
+    getYear (date: string) {
       return new Date(date).getFullYear()
     }
   }

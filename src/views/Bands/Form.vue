@@ -64,6 +64,9 @@
 </template>
 
 <script lang="ts">
+import type BandStatus from '@/entities/bandStatus'
+import type Country from '@/entities/country'
+import type Label from '@/entities/label'
 import axios from 'axios'
 export default {
   name: 'BandForm',
@@ -80,19 +83,19 @@ export default {
         band_status_id: '',
         label_id: '',
         formed_in: new Date(Date.now()).getFullYear(),
-        user_id: this.$store.state.user.id
+        // user_id: this.$store.state.user.id
       },
-      countries: [],
-      bandStatuses: [],
-      labels: [],
-      years: []
+      countries: new Array<Country>(),
+      bandStatuses: new Array<BandStatus>,
+      labels: new Array<Label>,
+      years: new Array<number>()
     }
   },
   methods: {
     async handleSubmit () {
       const headers = {
         headers: {
-          Authorization: this.$store.state.jwt
+          // Authorization: this.$store.state.jwt
         }
       }
       try {
@@ -103,7 +106,7 @@ export default {
           alert('Done!')
         }
       } catch (error) {
-
+        console.error(error);
       }
     }
   },
@@ -121,12 +124,14 @@ export default {
       this.bandStatuses = responses[1].data
       this.labels = responses[2].data
       if (this.bandId) {
-        const band = await axios.get(
+        const band = (await axios.get(
           `${process.env.VUE_APP_API_URL}/bands/${this.bandId}`
-        ).data
+        )).data
         this.band = band
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 </script>

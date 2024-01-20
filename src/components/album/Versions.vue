@@ -22,17 +22,18 @@
 </template>
 
 <script lang="ts">
+import type Album from '@/entities/album'
 import axios from 'axios'
 export default {
   name: 'OtherVersions',
   props: ['albumId'],
   data () {
     return {
-      versions: []
+      versions: new Array<Album>()
     }
   },
   methods: {
-    albumDate: function (date) {
+    albumDate: function (date: string) {
       return new Date(date).toLocaleDateString()
     }
   },

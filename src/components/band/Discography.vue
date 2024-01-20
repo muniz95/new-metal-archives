@@ -46,7 +46,7 @@ export default {
   name: 'BandDiscography',
   props: ['bandId', 'albums'],
   methods: {
-    getYear (date) {
+    getYear (date: string) {
       return new Date(date).getFullYear()
     }
   }

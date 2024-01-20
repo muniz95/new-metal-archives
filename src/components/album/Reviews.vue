@@ -10,17 +10,18 @@
 </template>
 
 <script lang="ts">
+import type Review from '@/entities/review'
 import axios from 'axios'
 export default {
   name: 'OtherVersions',
   props: ['albumId'],
   data () {
     return {
-      reviews: []
+      reviews: new Array<Review>()
     }
   },
   methods: {
-    formatDate: function (date) {
+    formatDate: function (date: string) {
       return new Date(date).toLocaleDateString()
     }
   },

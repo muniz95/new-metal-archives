@@ -45,12 +45,15 @@ export default {
           localStorage.setItem('user', JSON.stringify(response.data))
           localStorage.setItem('jwt', response.headers.authorization)
           this.$router.push('/')
-          this.$store.commit('authenticate')
+          // FIXME: re-implement store state using Pinia
+          // this.$store.commit('authenticate')
         }
       } catch (error) {
-        if (error.response.status === 401) {
-          alert('Not authorized')
-        }
+        console.error(error);
+        // TODO: implement a better error handling
+        // if (error.response.status === 401) {
+        //   alert('Not authorized')
+        // }
       }
     }
   }

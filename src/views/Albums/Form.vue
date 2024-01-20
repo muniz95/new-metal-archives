@@ -16,37 +16,37 @@
     <form name='albumForm' @submit.prevent='handleSubmit'>
       <div class="form-area">
         <label for='name'>Album name</label>
-        <input v-model='album.name' type='text' class='form-control' name='name' />
+        <input v-model='album!.name' type='text' class='form-control' name='name' />
       </div>
       <div class="form-area">
         <label for='location'>Band</label>
-        <span>{{bandsFeatured(album)}}</span>
+        <span>{{bandsFeatured(album!)}}</span>
         <!-- <input v-model='album.band.name' type='text' class='form-control' name='location' /> -->
       </div>
       <div class="form-area">
         <label for='location'>Release type</label>
-        <span>{{album.album_type}}</span>
+        <span>{{album!.album_type}}</span>
         <!-- <input v-model='album.band.name' type='text' class='form-control' name='location' /> -->
       </div>
       <div class="form-area">
         <label for='location'>Release date</label>
-        <span>{{formatDate(album.album_date)}}</span>
+        <span>{{formatDate(album!.album_date)}}</span>
       </div>
       <div class="form-area">
         <label for='labelId'>Current label</label>
-        <span>{{album.label.name}}</span>
+        <span>{{album!.label.name}}</span>
       </div>
       <div class="form-area">
         <label for='country'>Catalog ID</label>
-        <input type="text" v-model="album.catalog_id" name="catalogId" id="catalogId">
+        <input type="text" v-model="album!.catalog_id" name="catalogId" id="catalogId">
       </div>
       <div class="form-area">
         <label for='country'>Number of copies (if limited)</label>
-        <input type="text" v-model="album.num_copies" name="numCopies" id="numCopies">
+        <input type="text" v-model="album!.num_copies" name="numCopies" id="numCopies">
       </div>
       <div class="form-area">
         <label for='country'>Version description</label>
-        <input type="text" v-model="album.description" name="description" id="description">
+        <input type="text" v-model="album!.description" name="description" id="description">
       </div>
       <div class="form-area">
         <label for='country'>Album line-up</label>
@@ -54,15 +54,15 @@
       </div>
       <div class="form-area">
         <label for='country'>Additional notes</label>
-        <input type="text" v-model="album.additional_notes" name="notes" id="notes">
+        <input type="text" v-model="album!.additional_notes" name="notes" id="notes">
       </div>
       <div class="form-area">
         <label for='country'>Recording information</label>
-        <input type="text" v-model="album.recording_info" name="recInfo" id="recInfo">
+        <input type="text" v-model="album!.recording_info" name="recInfo" id="recInfo">
       </div>
       <div class="form-area">
         <label for='country'>Identifiers</label>
-        <input type="text" v-model="album.identifiers" name="identifiers" id="identifiers">
+        <input type="text" v-model="album!.identifiers" name="identifiers" id="identifiers">
       </div>
       <input type='submit' value='Login' />
       <button>Cancel</button>
@@ -73,51 +73,43 @@
 <script lang="ts">
 import axios from 'axios'
 import Modal from '@/components/Modal.vue'
+import type Country from '@/entities/country'
+import type Label from '@/entities/label'
+import type Album from '@/entities/album'
 export default {
   name: 'AlbumForm',
   components: { Modal },
   props: ['albumId'],
   data () {
     return {
-      album: {
-        name: '',
-        location: '',
-        genre: '',
-        themes: '',
-        info: '',
-        country_id: '',
-        album_status_id: '',
-        label_id: '',
-        num_copies: '',
-        formed_in: new Date(Date.now()).getFullYear(),
-        user_id: this.$store.state.user.id
-      },
-      countries: [],
+      album: null as Album | null,
+      countries: new Array<Country>(),
       albumStatuses: [],
-      labels: [],
-      years: [],
+      labels: new Array<Label>(),
+      years: new Array<number>(),
       isModalOpen: false
     }
   },
   methods: {
-    bandsFeatured (album) {
+    bandsFeatured (album: Album) {
       return album.participations
         ? album.participations.map(x => x.band.name).join(', ')
         : ''
     },
-    formatDate (date) {
+    formatDate (date: string) {
       return new Date(date).toLocaleDateString()
     },
     async handleSubmit () {
       const headers = {
         headers: {
-          Authorization: this.$store.state.jwt
+          // FIXME: re-implement store state using Pinia
+          // Authorization: this.$store.state.jwt
         }
       }
       try {
         let response
-        if (this.album.id) {
-          response = await axios.put(`${process.env.VUE_APP_API_URL}/albums/${this.album.id}`,
+        if (this.album!.id) {
+          response = await axios.put(`${process.env.VUE_APP_API_URL}/albums/${this.album!.id}`,
             this.album, headers)
         } else {
           response = await axios.post(`${process.env.VUE_APP_API_URL}/albums`,
@@ -128,7 +120,7 @@ export default {
           alert('Done!')
         }
       } catch (error) {
-
+        console.error(error);
       }
     },
     showModal () {
@@ -158,7 +150,9 @@ export default {
         )
         this.album = response.data
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 </script>

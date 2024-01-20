@@ -8,13 +8,14 @@
 </template>
 
 <script lang="ts">
+import type Lineup from '@/entities/lineup'
 import axios from 'axios'
 export default {
   name: 'BandMembers',
   props: ['albumId'],
   data () {
     return {
-      lineups: []
+      lineups: new Array<Lineup>()
     }
   },
   async mounted () {
