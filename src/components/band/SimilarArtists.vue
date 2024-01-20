@@ -27,7 +27,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/bands/${this.bandId}/similar`)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/bands/${this.bandId}/similar`)
     this.similarArtists = response.data
   }
 }

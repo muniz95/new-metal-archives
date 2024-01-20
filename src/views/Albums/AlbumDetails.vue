@@ -73,7 +73,7 @@ export default {
   },
   async mounted () {
     const { id } = this.$route.params
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/albums/${id}`)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/albums/${id}`)
     this.album = response.data
   },
   components: {
