@@ -56,6 +56,11 @@
 <script lang="ts">
 import axios from 'axios'
 import type Band from '@/entities/band'
+import BandDiscography from '@/components/band/Discography.vue'
+import BandMembers from '@/components/band/Members.vue'
+import BandReviews from '@/components/band/Reviews.vue'
+import SimilarArtists from '@/components/band/SimilarArtists.vue'
+import RelatedLinks from '@/components/band/RelatedLinks.vue'
 export default {
   data () {
     return {
@@ -64,15 +69,15 @@ export default {
   },
   async mounted () {
     const { id } = this.$route.params
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/bands/${id}`)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/bands/${id}`)
     this.band = response.data
   },
   components: {
-    BandDiscography: () => import('@/components/band/Discography.vue'),
-    BandMembers: () => import('@/components/band/Members.vue'),
-    BandReviews: () => import('@/components/band/Reviews.vue'),
-    SimilarArtists: () => import('@/components/band/SimilarArtists.vue'),
-    RelatedLinks: () => import('@/components/band/RelatedLinks.vue'),
+    BandDiscography,
+    BandMembers,
+    BandReviews,
+    SimilarArtists,
+    RelatedLinks,
   },
   methods: {
     // TODO: re-implement this logic without direct DOM manipulation

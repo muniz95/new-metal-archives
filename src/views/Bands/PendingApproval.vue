@@ -42,7 +42,7 @@ export default {
         includes: 'country,user'
       }
     }
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/bands`, params)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/bands`, params)
     this.bands = response.data
   }
 }

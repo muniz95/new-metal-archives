@@ -19,7 +19,7 @@ export default {
     }
   },
   async mounted () {
-    const response = await axios.get(`${process.env.VUE_APP_API_URL}/albums/${this.albumId}/lineup`)
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/albums/${this.albumId}/lineup`)
     this.lineups = response.data
   }
 }
