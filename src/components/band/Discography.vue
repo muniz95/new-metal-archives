@@ -3,7 +3,7 @@
     <tr>
       <router-link :to="{name: 'NewAlbum'}">
         <button>
-          <fai aria-hidden="true" icon="plus" title="Add a band" />
+          <font-awesome-icon aria-hidden="true" icon="plus" title="Add a band" />
         </button>
       </router-link>
     </tr>
@@ -17,11 +17,11 @@
     <tr v-for='album in albums' v-bind:key="album.name">
       <td style="align: center">
         <button>
-          <fai icon='screwdriver' />
+          <font-awesome-icon icon="screwdriver" />
         </button>
         <router-link :to="{name: 'AlbumEdit'}">
           <button>
-            <fai icon='edit' />
+            <font-awesome-icon icon='edit' />
           </button>
         </router-link>
       </td>
@@ -41,7 +41,6 @@
 </template>
 
 <script lang="ts">
-// import axios from 'axios'
 export default {
   name: 'BandDiscography',
   props: ['bandId', 'albums'],
@@ -49,16 +48,7 @@ export default {
     getYear (date: string) {
       return new Date(date).getFullYear()
     }
-  }
-  // data () {
-  //   return {
-  //     albums: []
-  //   }
-  // },
-  // async mounted () {
-  //   const response = await axios.get(`${import.meta.env.VITE_API_URL}/discography/${this.bandId}`)
-  //   this.albums = response.data
-  // }
+  },
 }
 </script>
 

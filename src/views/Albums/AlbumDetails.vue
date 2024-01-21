@@ -56,6 +56,11 @@
 
 <script lang="ts">
 import type Album from '@/entities/album'
+import SongList from '@/components/album/SongList.vue'
+import Lineup from '@/components/album/Lineup.vue'
+import Versions from '@/components/album/Versions.vue'
+import Reviews from '@/components/album/Reviews.vue'
+import AdditionalNotes from '@/components/album/AdditionalNotes.vue'
 import axios from 'axios'
 export default {
   data () {
@@ -77,11 +82,11 @@ export default {
     this.album = response.data
   },
   components: {
-    SongList: () => import('@/components/album/SongList.vue'),
-    Lineup: () => import('@/components/album/Lineup.vue'),
-    OtherVersions: () => import('@/components/album/Versions.vue'),
-    Reviews: () => import('@/components/album/Reviews.vue'),
-    AdditionalNotes: () => import('@/components/album/AdditionalNotes.vue'),
+    SongList,
+    Lineup,
+    OtherVersions: Versions,
+    Reviews,
+    AdditionalNotes,
   },
   methods: {
     // TODO: re-implement this logic without direct DOM manipulation

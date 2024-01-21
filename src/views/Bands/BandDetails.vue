@@ -1,4 +1,5 @@
 <template>
+  <span @click="back">Back</span>
   <div v-if="band != null">
     <h2>Title</h2>
     <div class="band-info">
@@ -53,43 +54,35 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import axios from 'axios'
-import type Band from '@/entities/band'
+import Band from '@/entities/band'
 import BandDiscography from '@/components/band/Discography.vue'
 import BandMembers from '@/components/band/Members.vue'
 import BandReviews from '@/components/band/Reviews.vue'
 import SimilarArtists from '@/components/band/SimilarArtists.vue'
 import RelatedLinks from '@/components/band/RelatedLinks.vue'
-export default {
-  data () {
-    return {
-      band: null as Band | null
-    }
-  },
-  async mounted () {
-    const { id } = this.$route.params
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/bands/${id}`)
-    this.band = response.data
-  },
-  components: {
-    BandDiscography,
-    BandMembers,
-    BandReviews,
-    SimilarArtists,
-    RelatedLinks,
-  },
-  methods: {
-    // TODO: re-implement this logic without direct DOM manipulation
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    showTab (city: string, type: string) {
-      // [...document.getElementsByClassName(type)].forEach(el => {
-      //   el.style.display = 'none'
-      // })
-      // document.getElementById(city).style.display = 'block'
-    }
-  }
+import { onBeforeMount, ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
+
+const band = ref<Band>()
+// TODO: re-implement this logic without direct DOM manipulation
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const showTab = (city: string, type: string) => {
+  // [...document.getElementsByClassName(type)].forEach(el => {
+  //   el.style.display = 'none'
+  // })
+  // document.getElementById(city).style.display = 'block'
 }
+const back = () => router.go(-1)
+
+onBeforeMount(async () => {
+  const { id } = route.params
+  const response = await axios.get(`${import.meta.env.VITE_API_URL}/bands/${id}`)
+  band.value = response.data
+})
 </script>
 
 <style lang="scss" scoped>
