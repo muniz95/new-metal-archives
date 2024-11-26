@@ -128,12 +128,12 @@ export default function PersistentDrawerRight({ children }: IProps) {
         <List>
           {subLeveledMenus.map((menuItem) => (
             <>
-              <ListItemButton onClick={() => handleClick(menuItem.title)}>
+              <ListItemButton key={menuItem.title} onClick={() => handleClick(menuItem.title)}>
                 <ListItemText primary={menuItem.title} />
                 {openSubMenu[menuItem.title] ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>
               {menuItem.subMenus.map((subMenu) => (
-                <Collapse in={openSubMenu[menuItem.title]} timeout="auto" unmountOnExit>
+                <Collapse key={subMenu.title} in={openSubMenu[menuItem.title]} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
                     <ListItemButton sx={{ pl: 4 }}>
                       <ListItemText primary={subMenu.title} />

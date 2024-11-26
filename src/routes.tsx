@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from '@/features/home';
 import Layout from '@/layouts/default';
 import NotFound from '@/pages/not-found';
+import Alphabteical from './features/bands/alphabteical';
 
 const browserRouter = createBrowserRouter([
   {
@@ -18,6 +19,23 @@ const browserRouter = createBrowserRouter([
       {
         path: '',
         element: <Home />,
+      },
+      {
+        path: 'bands',
+        children: [
+          {
+            path: 'alphabetical',
+            element: <Alphabteical />,
+          },
+          {
+            path: 'country',
+            element: <Home />,
+          },
+          {
+            path: 'genre',
+            element: <Home />,
+          },
+        ]
       },
       {
         path: '*',
