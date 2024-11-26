@@ -10,18 +10,51 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  styled
+  styled,
+  Collapse
 } from "@mui/material";
 import { ReactElement, useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
 import AppBar from "@/components/app-bar";
 import Main from "@/components/main";
 import { drawerWidth } from "@/constants";
+import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
 
 interface IProps {
   children: ReactElement
 }
+
+const subLeveledMenus = [
+  {
+    title: 'Bands',
+    subMenus: [
+      { title: 'Alphabetical', url: '/bands/alphabetical' },
+      { title: 'Country', url: '/bands/country' },
+      { title: 'Genre', url: '/bands/genre' },
+    ]
+  },
+  {
+    title: 'Labels',
+    subMenus: [
+      { title: 'Alphabetical', url: '/labels/alphabetical' },
+      { title: 'Country', url: '/labels/country' },
+    ]
+  },
+];
+
+const miscMenus = [
+  { title: 'R.I.P.', url: '/rip' },
+  { title: 'Random Band', url: '/bands/random' },
+  { title: 'Users Ranking', url: '/rankings' },
+  { title: 'News Archive', url: '/news' },
+];
+
+const contributionMenus = [
+  { title: 'Reports', url: '/reports' },
+  { title: 'Contribute/To Do', url: '/contribute' },
+];
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -33,6 +66,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function PersistentDrawerRight({ children }: IProps) {
   const [open, setOpen] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState<{
+    [key: string]: boolean
+  }>({
+    'Bands': false,
+    'Labels': false,
+  });
+
+  const handleClick = (key: string) => {
+    setOpenSubMenu({[key]: !openSubMenu[key]});
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -83,22 +126,42 @@ export default function PersistentDrawerRight({ children }: IProps) {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
-            <ListItem key={text} disablePadding>
+          {subLeveledMenus.map((menuItem) => (
+            <>
+              <ListItemButton onClick={() => handleClick(menuItem.title)}>
+                <ListItemText primary={menuItem.title} />
+                {openSubMenu[menuItem.title] ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
+              {menuItem.subMenus.map((subMenu) => (
+                <Collapse in={openSubMenu[menuItem.title]} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemButton sx={{ pl: 4 }}>
+                      <ListItemText primary={subMenu.title} />
+                    </ListItemButton>
+                  </List>
+                </Collapse>
+              ))}
+            </>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {miscMenus.map((menuItem) => (
+            <ListItem key={menuItem.title} disablePadding>
               <ListItemButton>
                 <ListItemIcon />
-                <ListItemText primary={text} />
+                <ListItemText primary={menuItem.title} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text) => (
-            <ListItem key={text} disablePadding>
+          {contributionMenus.map((menuItem) => (
+            <ListItem key={menuItem.title} disablePadding>
               <ListItemButton>
                 <ListItemIcon />
-                <ListItemText primary={text} />
+                <ListItemText primary={menuItem.title} />
               </ListItemButton>
             </ListItem>
           ))}
