@@ -1,780 +1,226 @@
 {
-  "albums": [
+  "news": [
     {
-      "name": "Beneath the Encasing of Ashes",
-      "type": "Full-length",
-      "year": "2001",
-      "reviews": "2 (90%)",
-      "bandId": 1
+      "id": 1,
+      "title": "Teste 1",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 1"
     },
     {
-      "name": "As I Lay Dying / American Tragedy",
-      "type": "Split",
-      "year": "2002",
-      "reviews": "1 (80%)",
-      "bandId": 1
+      "id": 2,
+      "title": "Teste 2",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 2"
     },
     {
-      "name": "94 Hours",
-      "type": "Single",
-      "year": "2003",
-      "reviews": "",
-      "bandId": 1
+      "id": 3,
+      "title": "Teste 3",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 3"
     },
     {
-      "name": "Forever",
-      "type": "Single",
-      "year": "2003",
-      "reviews": "",
-      "bandId": 1
+      "id": 4,
+      "title": "Teste 4",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 4"
     },
     {
-      "name": "Frail Words Collapse",
-      "type": "Full-length",
-      "year": "2003",
-      "reviews": "7 (69%)",
-      "bandId": 1
+      "id": 5,
+      "title": "Teste 5",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 5"
     },
     {
-      "name": "Confined",
-      "type": "Single",
-      "year": "2005",
-      "reviews": "",
-      "bandId": 1
+      "id": 6,
+      "title": "Teste 6",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 6"
     },
     {
-      "name": "Through Struggle",
-      "type": "Single",
-      "year": "2005",
-      "reviews": "",
-      "bandId": 1
+      "id": 7,
+      "title": "Teste 7",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 7"
     },
     {
-      "name": "Shadows Are Security",
-      "type": "Full-length",
-      "year": "2005",
-      "reviews": "12 (68%)",
-      "bandId": 1
+      "id": 8,
+      "title": "Teste 8",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 8"
     },
     {
-      "name": "The Darkest Nights",
-      "type": "Single",
-      "year": "2006",
-      "reviews": "",
-      "bandId": 1
+      "id": 9,
+      "title": "Teste 9",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 9"
     },
     {
-      "name": "A Long March: The First Recordings",
-      "type": "Compilation",
-      "year": "2006",
-      "reviews": "1 (70%)",
-      "bandId": 1
-    },
-    {
-      "name": "Nothing Left",
-      "type": "Single",
-      "year": "2007",
-      "reviews": "",
-      "bandId": 1
-    },
-    {
-      "name": "An Ocean Between Us",
-      "type": "Full-length",
-      "year": "2007",
-      "reviews": "12 (70%)",
-      "bandId": 1
-    },
-    {
-      "name": "The Sound of Truth",
-      "type": "Single",
-      "year": "2008",
-      "reviews": "",
-      "bandId": 1
-    },
-    {
-      "name": "This Is Who We Are",
-      "type": "Video",
-      "year": "2009",
-      "reviews": "",
-      "bandId": 1
-    },
-    {
-      "name": "The Powerless Rise",
-      "type": "Full-length",
-      "year": "2010",
-      "reviews": "5 (79%)",
-      "bandId": 1
-    },
-    {
-      "name": "Decas",
-      "type": "EP",
-      "year": "2011",
-      "reviews": "2 (50%)",
-      "bandId": 1
-    },
-    {
-      "name": "Cauterize",
-      "type": "Single",
-      "year": "2012",
-      "reviews": "1 (90%)",
-      "bandId": 1
-    },
-    {
-      "name": "Awakened",
-      "type": "Full-length",
-      "year": "2012",
-      "reviews": "4 (71%)",
-      "bandId": 1
-    },
-    {
-      "name": "My Own Grave",
-      "type": "Single",
-      "year": "2018",
-      "reviews": "1 (90%)",
-      "bandId": 1
-    },
-    {
-      "name": "Redefined",
-      "type": "Single",
-      "year": "2019",
-      "reviews": "1 (80%)",
-      "bandId": 1
-    },
-    {
-      "name": "Shaped by Fire",
-      "type": "Full-length",
-      "year": "2019",
-      "reviews": "2 (93%)",
-      "bandId": 1
+      "id": 10,
+      "title": "Teste 10",
+      "content": "uheuaheuhauehauheuaheuahe",
+      "author": "Author 10"
     }
   ],
-  "artists": [
-    {
-      "name": "Jordan Mancino",
-      "role": "Drums",
-      "periods": [
-        "2000-2014",
-        "2018-present"
-      ],
-      "relatedProjects": [
-        "Souls of We",
-        "Wovenwar",
-        "ex-Sworn Enemy",
-        "ex-Killswitch Engage (live)",
-        "ex-Unearth (live)",
-        "ex-Edge of Mortality"
-      ],
-      "status": "current",
-      "bandId": 1
-    },
-    {
-      "name": "Tim Lambesis",
-      "role": "Vocals",
-      "periods": [
-        "2000-2014",
-        "2017-present"
-      ],
-      "relatedProjects": [
-        "Austrian Death Machine",
-        "Pyrithion",
-        "ex-Against the Mark",
-        "ex-Life Once Lost",
-        "ex-Point of Recognition",
-        "ex-Society's Finest"
-      ],
-      "status": "current",
-      "bandId": 1
-    },
-    {
-      "name": "Phil Sgrosso",
-      "role": "Guitars",
-      "periods": [
-        "2003-2014",
-        "2018-present"
-      ],
-      "relatedProjects": [
-        "Poison Headache",
-        "Saosin (live)",
-        "ex-Nails (live)",
-        "ex-Wovenwar"
-      ],
-      "status": "current",
-      "bandId": 1
-    },
-    {
-      "name": "Nick Hipa",
-      "role": "Guitars",
-      "periods": [
-        "2004-2014",
-        "2018-present"
-      ],
-      "relatedProjects": [
-        "Wovenwar"
-      ],
-      "status": "current",
-      "bandId": 1
-    },
-    {
-      "name": "Josh Gilbert",
-      "role": "Bass, Vocals (clean)",
-      "periods": [
-        "2007-2014",
-        "2018-present"
-      ],
-      "relatedProjects": [
-        "Austrian Death Machine (live)",
-        "Wovenwar",
-        "Year One"
-      ],
-      "status": "current",
-      "bandId": 1
-    }
-  ],
-  "reviews": [
-    {
-      "album": "Shaped by Fire",
-      "rating": "85%",
-      "author": "hells_unicorn",
-      "date": "October 7th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Shaped by Fire",
-      "rating": "100%",
-      "author": "Petrus_Steele",
-      "date": "October 5th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Awakened",
-      "rating": "75%",
-      "author": "Petrus_Steele",
-      "date": "October 5th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Decas",
-      "rating": "20%",
-      "author": "Petrus_Steele",
-      "date": "October 3rd, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "The Powerless Rise",
-      "rating": "60%",
-      "author": "Petrus_Steele",
-      "date": "October 1st, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "50%",
-      "author": "Petrus_Steele",
-      "date": "October 1st, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "65%",
-      "author": "Petrus_Steele",
-      "date": "September 24th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "85%",
-      "author": "Petrus_Steele",
-      "date": "September 21st, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "A Long March: The First Recordings",
-      "rating": "70%",
-      "author": "Petrus_Steele",
-      "date": "September 14th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Beneath the Encasing of Ashes",
-      "rating": "80%",
-      "author": "Petrus_Steele",
-      "date": "September 14th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "Redefined",
-      "rating": "80%",
-      "author": "grimwinter13",
-      "date": "April 11th, 2019",
-      "bandId": 1
-    },
-    {
-      "album": "My Own Grave",
-      "rating": "90%",
-      "author": "Beast of Burden",
-      "date": "August 4th, 2018",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "70%",
-      "author": "BlackMetal213",
-      "date": "April 9th, 2016",
-      "bandId": 1
-    },
-    {
-      "album": "Awakened",
-      "rating": "40%",
-      "author": "bkuettel",
-      "date": "October 30th, 2015",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "65%",
-      "author": "Deathandthrashlover",
-      "date": "October 7th, 2015",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "30%",
-      "author": "gasmask_colostomy",
-      "date": "May 27th, 2015",
-      "bandId": 1
-    },
-    {
-      "album": "The Powerless Rise",
-      "rating": "75%",
-      "author": "Diamhea",
-      "date": "October 26th, 2014",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "40%",
-      "author": "dartz123",
-      "date": "September 23rd, 2014",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "79%",
-      "author": "psychosisholocausto",
-      "date": "February 23rd, 2013",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "85%",
-      "author": "metal22",
-      "date": "January 19th, 2013",
-      "bandId": 1
-    },
-    {
-      "album": "Awakened",
-      "rating": "99%",
-      "author": "ArnoldHablewitz",
-      "date": "November 12th, 2012",
-      "bandId": 1
-    },
-    {
-      "album": "Awakened",
-      "rating": "70%",
-      "author": "tcgjarhead",
-      "date": "October 16th, 2012",
-      "bandId": 1
-    },
-    {
-      "album": "Cauterize",
-      "rating": "90%",
-      "author": "DomDomMCMG",
-      "date": "July 6th, 2012",
-      "bandId": 1
-    },
-    {
-      "album": "Decas",
-      "rating": "80%",
-      "author": "RidgeDeadite",
-      "date": "May 28th, 2012",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "65%",
-      "author": "Diamhea",
-      "date": "September 23rd, 2011",
-      "bandId": 1
-    },
-    {
-      "album": "Beneath the Encasing of Ashes",
-      "rating": "100%",
-      "author": "danbedrosian",
-      "date": "August 18th, 2011",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "85%",
-      "author": "plebman",
-      "date": "June 3rd, 2011",
-      "bandId": 1
-    },
-    {
-      "album": "The Powerless Rise",
-      "rating": "84%",
-      "author": "ReapSoul964",
-      "date": "May 19th, 2011",
-      "bandId": 1
-    },
-    {
-      "album": "The Powerless Rise",
-      "rating": "90%",
-      "author": "tcgjarhead",
-      "date": "February 5th, 2011",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "83%",
-      "author": "Evangelion2014",
-      "date": "December 19th, 2010",
-      "bandId": 1
-    },
-    {
-      "album": "The Powerless Rise",
-      "rating": "85%",
-      "author": "Xyrth",
-      "date": "October 7th, 2010",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "50%",
-      "author": "Five_Nails",
-      "date": "July 24th, 2010",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "100%",
-      "author": "MetalcoreMad",
-      "date": "June 14th, 2010",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "65%",
-      "author": "JamesIII",
-      "date": "February 10th, 2010",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "50%",
-      "author": "WokeUpDead",
-      "date": "November 28th, 2009",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "77%",
-      "author": "Xeroxification",
-      "date": "October 19th, 2009",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "85%",
-      "author": "Metalwontdie",
-      "date": "July 8th, 2009",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "92%",
-      "author": "Metalwontdie",
-      "date": "July 1st, 2009",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "75%",
-      "author": "Oxidane",
-      "date": "June 20th, 2009",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "5%",
-      "author": "Hytopsis",
-      "date": "June 24th, 2008",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "60%",
-      "author": "hend",
-      "date": "March 26th, 2008",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "80%",
-      "author": "Diamhea",
-      "date": "November 13th, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "70%",
-      "author": "invaded",
-      "date": "November 2nd, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "An Ocean Between Us",
-      "rating": "75%",
-      "author": "Ethan_Gale",
-      "date": "October 2nd, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "70%",
-      "author": "NonEsDignus",
-      "date": "March 25th, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "85%",
-      "author": "kriikii_the_great",
-      "date": "March 4th, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "Shadows Are Security",
-      "rating": "57%",
-      "author": "burningsynthetic",
-      "date": "February 28th, 2007",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "78%",
-      "author": "krozza",
-      "date": "October 6th, 2004",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "75%",
-      "author": "spongerob",
-      "date": "August 13th, 2004",
-      "bandId": 1
-    },
-    {
-      "album": "As I Lay Dying / American Tragedy",
-      "rating": "80%",
-      "author": "SoulSeekJay",
-      "date": "July 7th, 2004",
-      "bandId": 1
-    },
-    {
-      "album": "Frail Words Collapse",
-      "rating": "90%",
-      "author": "SoulSeekJay",
-      "date": "July 7th, 2004"
-    }
-  ],
-  "similar": [
-    {
-      "name": "Killswitch Engage",
-      "country": "United States",
-      "genre": "Metalcore",
-      "score": 91,
-      "bandId": 1
-    },
-    {
-      "name": "All That Remains",
-      "country": "United States",
-      "genre": "Metalcore/Melodic Death Metal (early); Metalcore/Melodic Hard Rock (later)",
-      "score": 66,
-      "bandId": 1
-    },
-    {
-      "name": "Trivium",
-      "country": "United States",
-      "genre": "Metalcore, Thrash/Heavy Metal",
-      "score": 60,
-      "bandId": 1
-    },
-    {
-      "name": "Unearth",
-      "country": "United States",
-      "genre": "Metalcore",
-      "score": 55,
-      "bandId": 1
-    },
-    {
-      "name": "Shadows Fall",
-      "country": "United States",
-      "genre": "Melodic Death Metal (early), Metalcore (later)",
-      "score": 49,
-      "bandId": 1
-    },
-    {
-      "name": "Austrian Death Machine",
-      "country": "United States",
-      "genre": "Thrash Metal/Crossover/Metalcore",
-      "score": 44,
-      "bandId": 1
-    },
-    {
-      "name": "Darkest Hour",
-      "country": "United States",
-      "genre": "Melodic Death Metal/Metalcore",
-      "score": 41,
-      "bandId": 1
-    },
-    {
-      "name": "Caliban",
-      "country": "Germany",
-      "genre": "Metalcore",
-      "score": 35,
-      "bandId": 1
-    },
-    {
-      "name": "Heaven Shall Burn",
-      "country": "Germany",
-      "genre": "Melodic Death Metal/Metalcore",
-      "score": 29,
-      "bandId": 1
-    },
-    {
-      "name": "Underoath",
-      "country": "United States",
-      "genre": "Metalcore (early), Alternative Rock/Post-Hardcore/Metalcore (later)",
-      "score": 26,
-      "bandId": 1
-    },
-    {
-      "name": "Times of Grace",
-      "country": "United States",
-      "genre": "Metalcore",
-      "score": 22,
-      "bandId": 1
-    },
-    {
-      "name": "Miss May I",
-      "country": "United States",
-      "genre": "Metalcore",
-      "score": 21,
-      "bandId": 1
-    },
-    {
-      "name": "DevilDriver",
-      "country": "United States",
-      "genre": "Nu-Metal (early); Groove/Melodic Death Metal (later)",
-      "score": 17,
-      "bandId": 1
-    },
-    {
-      "name": "Sonic Syndicate",
-      "country": "Sweden",
-      "genre": "Melodic Groove Metal (early), Alternative Rock/Metalcore (later)",
-      "score": 17,
-      "bandId": 1
-    },
-    {
-      "name": "Bleeding Through",
-      "country": "United States",
-      "genre": "Metalcore",
-      "score": 17,
-      "bandId": 1
-    },
-    {
-      "name": "The Agonist",
-      "country": "Canada",
-      "genre": "Melodic Death Metal/Metalcore",
-      "score": 16,
-      "bandId": 1
-    },
-    {
-      "name": "Soilwork",
-      "country": "Sweden",
-      "genre": "Melodic Death Metal (early), Metalcore/Melodic Groove Metal (later)",
-      "score": 15,
-      "bandId": 1
-    },
-    {
-      "name": "Chimaira",
-      "country": "United States",
-      "genre": "Groove/Nu-Metal/Metalcore",
-      "score": 14,
-      "bandId": 1
-    },
-    {
-      "name": "God Forbid",
-      "country": "United States",
-      "genre": "Melodic Thrash Metal/Metalcore",
-      "score": 13,
-      "bandId": 1
-    },
-    {
-      "name": "Sylosis",
-      "country": "United Kingdom",
-      "genre": "Melodic Death/Thrash Metal",
-      "score": 11,
-      "bandId": 1
-    }
-  ],
-  "links": [
-    {
-      "site": "Bandcamp",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Deezer",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Facebook",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Homepage",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Instagram",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Myspace",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Spotify",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "Twitter",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    },
-    {
-      "site": "YouTube",
-      "url": "https://www.google.com.br",
-      "bandId": 1
-    }
-  ]
+  "bands": {
+    "latest": [
+      {
+        "id": 1,
+        "name": "Cadaver Soiree",
+        "date": "June 25, 10:43"
+      },
+      {
+        "id": 2,
+        "name": "Panthematic",
+        "date": "June 25, 10:21"
+      },
+      {
+        "id": 3,
+        "name": "Qualen",
+        "date": "June 25, 09:56"
+      },
+      {
+        "id": 4,
+        "name": "Halcón",
+        "date": "June 25, 07:44"
+      },
+      {
+        "id": 5,
+        "name": "Infadus",
+        "date": "June 25, 07:23"
+      },
+      {
+        "id": 6,
+        "name": "Dispiteous",
+        "date": "June 25, 06:39"
+      },
+      {
+        "id": 7,
+        "name": "Mysterium Vacui",
+        "date": "June 25, 05:35"
+      },
+      {
+        "id": 8,
+        "name": "Veliki Odmor",
+        "date": "June 25, 05:30"
+      },
+      {
+        "id": 9,
+        "name": "Angústia",
+        "date": "June 25, 05:05"
+      },
+      {
+        "id": 10,
+        "name": "Tenebrius",
+        "date": "June 25, 04:32"
+      }
+    ]
+  },
+  "artists": {
+    "latest": [
+      {
+        "id": 1,
+        "name": "Andrea Espino",
+        "date": "June 25, 23:04"
+      },
+      {
+        "id": 2,
+        "name": "Harold Hoover",
+        "date": "June 25, 22:49"
+      },
+      {
+        "id": 3,
+        "name": "Cameron Shirey",
+        "date": "June 25, 22:47"
+      },
+      {
+        "id": 4,
+        "name": "Erebus",
+        "date": "June 25, 17:17"
+      },
+      {
+        "id": 5,
+        "name": "Josh Villa",
+        "date": "June 25, 17:16"
+      },
+      {
+        "id": 6,
+        "name": "T",
+        "date": "June 25, 17:13"
+      },
+      {
+        "id": 7,
+        "name": "Edson Ferreira",
+        "date": "June 25, 16:54"
+      },
+      {
+        "id": 8,
+        "name": "Monalisa Andrade",
+        "date": "June 25, 16:49"
+      },
+      {
+        "id": 9,
+        "name": "J. Medeiros",
+        "date": "June 25, 16:30"
+      },
+      {
+        "id": 10,
+        "name": "Rafael Simões",
+        "date": "June 25, 13:38"
+      }
+    ]
+  },
+  "labels": {
+    "latest": [
+      {
+        "id": 1,
+        "name": "War Cry",
+        "date": "June 25, 13:20"
+      },
+      {
+        "id": 2,
+        "name": "Unholy Dungeon Records",
+        "date": "June 25, 00:53"
+      },
+      {
+        "id": 3,
+        "name": "Kaiwhakamate Records",
+        "date": "June 24, 08:09"
+      },
+      {
+        "id": 4,
+        "name": "SPB 282",
+        "date": "June 24, 07:07"
+      },
+      {
+        "id": 5,
+        "name": "Evil Attack Records",
+        "date": "June 24, 04:03"
+      },
+      {
+        "id": 6,
+        "name": "Interitvs Nvmen",
+        "date": "June 22, 12:51"
+      },
+      {
+        "id": 7,
+        "name": "Church Records",
+        "date": "June 22, 05:53"
+      },
+      {
+        "id": 8,
+        "name": "Sunshine Ward Recordings",
+        "date": "June 22, 05:44"
+      },
+      {
+        "id": 9,
+        "name": "DK Records",
+        "date": "June 21, 03:40"
+      },
+      {
+        "id": 10,
+        "name": "Hecate Productions",
+        "date": "June 20, 17:16"
+      }
+    ]
+  }
 }
