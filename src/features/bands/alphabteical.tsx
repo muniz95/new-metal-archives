@@ -1,22 +1,24 @@
 import ErrorFallback from "@/components/error-fallback";
-import { Paper } from "@mui/material";
+import { Paper, useMediaQuery, useTheme } from "@mui/material";
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useState } from "react";
 import { withErrorBoundary } from "react-error-boundary";
 
 const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
 const options = ['', ...alphabet, '#', '~'];
-const columns: GridColDef[] = [
-  { field: 'name', headerName: 'Name', width: 130 },
-  { field: 'country', headerName: 'Country', width: 130 },
-  { field: 'genre', headerName: 'Genre', width: 90 },
-  {
-    field: 'status',
-    headerName: 'Status',
-    sortable: false,
-    width: 80,
-  },
-];
+const columns = (isSmallScreen: boolean): GridColDef[] => {
+  return [
+    { field: 'name', headerName: 'Name', width: isSmallScreen ? 130 : 180 },
+    { field: 'country', headerName: 'Country', width: isSmallScreen ? 130 : 180 },
+    { field: 'genre', headerName: 'Genre', width: isSmallScreen ? 90 : 140 },
+    {
+      field: 'status',
+      headerName: 'Status',
+      sortable: false,
+      width: isSmallScreen ? 80 : 120,
+    },
+  ]
+};
 const rows = [
   {
     id: 1,
@@ -76,6 +78,8 @@ const Alphabteical = () => {
   const handleSelect = (event: React.ChangeEvent<HTMLOptionElement>) => {
     setSelectedOption(event.target.value);
   }
+  const theme = useTheme();
+  const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <div>
@@ -92,7 +96,7 @@ const Alphabteical = () => {
       <Paper sx={{ height: 400, width: '100%' }}>
         <DataGrid
           rows={rows}
-          columns={columns}
+          columns={columns(isSmScreen)}
           initialState={{ pagination: { paginationModel } }}
           pageSizeOptions={[5, 10]}
           sx={{ border: 0 }}
