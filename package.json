@@ -17,6 +17,7 @@
     "@mui/icons-material": "^6.1.4",
     "@mui/material": "^6.1.3",
     "@mui/styled-engine-sc": "^6.1.3",
+    "@mui/x-data-grid": "^7.22.3",
     "@tanstack/react-query": "^5.60.5",
     "axios": "^1.7.7",
     "react": "^18.3.1",
