@@ -21,6 +21,7 @@ import AppBar from "@/components/app-bar";
 import Main from "@/components/main";
 import { drawerWidth } from "@/constants";
 import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 interface IProps {
   children: ReactElement
@@ -134,11 +135,13 @@ export default function PersistentDrawerRight({ children }: IProps) {
               </ListItemButton>
               {menuItem.subMenus.map((subMenu) => (
                 <Collapse key={subMenu.title} in={openSubMenu[menuItem.title]} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    <ListItemButton sx={{ pl: 4 }}>
-                      <ListItemText primary={subMenu.title} />
-                    </ListItemButton>
-                  </List>
+                  <Link to={subMenu.url} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <List component="div" disablePadding>
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemText primary={subMenu.title} />
+                      </ListItemButton>
+                    </List>
+                  </Link>
                 </Collapse>
               ))}
             </>
