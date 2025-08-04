@@ -1,47 +1,57 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from '@/features/home';
-import Layout from '@/layouts/default';
-import NotFound from '@/pages/not-found';
-import Alphabteical from './features/bands/alphabteical';
+import Home from "@/features/home";
+import Layout from "@/layouts/default";
+import NotFound from "@/pages/not-found";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Alphabteical from "./features/bands/alphabteical";
+import BandsByCountry from "./features/bands/country";
 
 const browserRouter = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     loader: () => {
       return {
-        name: 'Admin',
-        role: 'Administrator'
-      }
+        name: "Admin",
+        role: "Administrator",
+      };
     },
-    id: 'root',
+    id: "root",
     element: <Layout />,
     children: [
       {
-        path: '',
+        path: "",
         element: <Home />,
       },
       {
-        path: 'bands',
+        path: "bands",
         children: [
           {
-            path: 'alphabetical',
+            path: "alphabetical",
             element: <Alphabteical />,
           },
           {
-            path: 'country',
-            element: <Home />,
+            path: "country",
+            children: [
+              {
+                path: "",
+                element: <BandsByCountry />,
+              },
+              {
+                path: ":country",
+                element: <Home />, // Placeholder for country-specific bands
+              },
+            ],
           },
           {
-            path: 'genre',
+            path: "genre",
             element: <Home />,
           },
-        ]
+        ],
       },
       {
-        path: '*',
+        path: "*",
         element: <NotFound />,
       },
-    ]
+    ],
   },
 ]);
 
